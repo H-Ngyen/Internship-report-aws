@@ -4,7 +4,7 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -48,14 +48,15 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Fix image paths for GitHub Pages
+        run: |
+          find content -name '*.md' -type f -exec sed -i 's|](/images/|](https://github.com/H-Ngyen/Internship-report-aws/images/|g' {} +
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --minify --baseURL "https://github.com/H-Ngyen/Internship-report-aws/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
