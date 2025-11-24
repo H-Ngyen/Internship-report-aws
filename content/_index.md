@@ -9,11 +9,11 @@ chapter : false
 
 ### Thông tin sinh viên:
 
-  **Họ và tên:** Cao Phan Khải
+  **Họ và tên:** Nguyễn Ngô Hoàng Nguyên
 
-  **Số điện thoại:** 0845679711
+  **Số điện thoại:** 0392956804
 
-  **Email:** caophankhai2004@gmail.com
+  **Email:** hoangnguyennn0210@gmail.com
 
   **Trường:** Đại học Văn Lang TP.HCM
 
