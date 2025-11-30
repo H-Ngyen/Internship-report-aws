@@ -50,13 +50,13 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Fix image paths for GitHub Pages
         run: |
-          find content -name '*.md' -type f -exec sed -i 's|](/images/|](https://h-ngyen.github.io/images/|g' {} +
+          find content -name '*.md' -type f -exec sed -i 's|](/images/|](https://h-ngyen.github.io/Internship-report-aws/images/|g' {} +
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo --minify --baseURL "https://h-ngyen.github.io/"
+          hugo --minify --baseURL "https://h-ngyen.github.io/Internship-report-aws/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
