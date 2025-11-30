@@ -48,9 +48,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Fix image paths for GitHub Pages
-        run: |
-          find content -name '*.md' -type f -exec sed -i 's|](/images/|](https://h-ngyen.github.io/Internship-report-aws/images/|g' {} +
+
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
