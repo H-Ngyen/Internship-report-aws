@@ -1,0 +1,3791 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Cleanup Resources :: Deploy Node.js với AWS Serverless</title>
+
+    
+    <link href="/css/nucleus.css?1764502934" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1764502934" rel="stylesheet">
+    <link href="/css/hybrid.css?1764502934" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1764502934" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1764502934" rel="stylesheet">
+    <link href="/css/auto-complete.css?1764502934" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1764502934" rel="stylesheet">
+    <link href="/css/theme.css?1764502934" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1764502934" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1764502934" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1764502934"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/4-workshop/4.7-cleanup/_index.en/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/Internship-report-aws/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1764502934"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1764502934"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1764502934"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/" title="Nhật ký công việc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/">
+           <b> 1. </b> Nhật ký công việc
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.1-week1/" title="Worklog Tuần 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.1-week1/">
+           <b> 1.1. </b> Worklog Tuần 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.2-week2/" title="Worklog Tuần 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.2-week2/">
+           <b> 1.2. </b> Worklog Tuần 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.3-week3/" title="Worklog Tuần 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.3-week3/">
+           <b> 1.3. </b> Worklog Tuần 3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.4-week4/" title="Worklog Tuần 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.4-week4/">
+           <b> 1.4. </b> Worklog Tuần 4
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.5-week5/" title="Worklog Tuần 5" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.5-week5/">
+           <b> 1.5. </b> Worklog Tuần 5
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.6-week6/" title="Worklog Tuần 6" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.6-week6/">
+           <b> 1.6. </b> Worklog Tuần 6
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.7-week7/" title="Worklog Tuần 7" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.7-week7/">
+           <b> 1.7. </b> Worklog Tuần 7
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.8-week8/" title="Worklog Tuần 8" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.8-week8/">
+           <b> 1.8. </b> Worklog Tuần 8
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.9-week9/" title="Worklog Tuần 9" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.9-week9/">
+           <b> 1.9. </b> Worklog Tuần 9
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.10-week10/" title="Worklog Tuần 10" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.10-week10/">
+           <b> 1.10. </b> Worklog Tuần 10
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.11-week11/" title="Worklog Tuần 11" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.11-week11/">
+           <b> 1.11. </b> Worklog Tuần 11
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-worklog/1.12-week12/" title="Worklog Tuần 12" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-worklog/1.12-week12/">
+           <b> 1.12. </b> Worklog Tuần 12
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-proposal/" title="Bản đề xuất" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-proposal/">
+           <b> 2. </b> Bản đề xuất
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/" title="Workshop" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/4-workshop/">
+           <b> 4. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.1-introduce/" title="Giới thiệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.1-introduce/">
+           <b> 4.1. </b> Giới thiệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.1-introduce/_index.en/" title="Introduction" class="dd-item ">
+        <a href="/4-workshop/4.1-introduce/_index.en/">
+         <b> 4.1. </b> Introduction
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.2-prerequiste/">
+           <b> 4.2. </b> Các bước chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.2-prerequiste/4.2.1-create-vpc/" title="Tạo VPC và Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.2-prerequiste/4.2.1-create-vpc/">
+           <b> 4.2.1. </b> Tạo VPC và Network
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.2-prerequiste/4.2.1-create-vpc/_index.en/" title="Create VPC and Network" class="dd-item ">
+        <a href="/4-workshop/4.2-prerequiste/4.2.1-create-vpc/_index.en/">
+         <b> 4.2.1. </b> Create VPC and Network
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.2-prerequiste/_index.en/" title="Prerequisites" class="dd-item ">
+        <a href="/4-workshop/4.2-prerequiste/_index.en/">
+         <b> 4.2. </b> Prerequisites
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/" title="Tạo IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/">
+           <b> 4.2.2 </b> Tạo IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/_index.en/" title="Create IAM Role" class="dd-item ">
+        <a href="/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/_index.en/">
+         <b> 4.2.2 </b> Create IAM Role
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/" title="Tạo IAM User và Access Keys" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/">
+           <b> 4.2.3 </b> Tạo IAM User và Access Keys
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/_index.en/" title="Create IAM User and Access Keys" class="dd-item ">
+        <a href="/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/_index.en/">
+         <b> 4.2.3 </b> Create IAM User and Access Keys
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.3-database/" title="Tạo DynamoDB Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.3-database/">
+           <b> 4.3. </b> Tạo DynamoDB Database
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.3-database/4.3.1-create-tables/" title="Tạo DynamoDB Tables" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.3-database/4.3.1-create-tables/">
+           <b> 4.3.1 </b> Tạo DynamoDB Tables
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.3-database/4.3.1-create-tables/_index.en/" title="Create DynamoDB Tables" class="dd-item ">
+        <a href="/4-workshop/4.3-database/4.3.1-create-tables/_index.en/">
+         <b> 4.3.1 </b> Create DynamoDB Tables
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.3-database/4.3.2-import-data/" title="Import dữ liệu mẫu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.3-database/4.3.2-import-data/">
+           <b> 4.3.2 </b> Import dữ liệu mẫu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.3-database/4.3.2-import-data/_index.en/" title="Import Sample Data" class="dd-item ">
+        <a href="/4-workshop/4.3-database/4.3.2-import-data/_index.en/">
+         <b> 4.3.2 </b> Import Sample Data
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.3-database/_index.en/" title="Create DynamoDB Database" class="dd-item ">
+        <a href="/4-workshop/4.3-database/_index.en/">
+         <b> 4.3. </b> Create DynamoDB Database
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.4-storage/" title="Cấu hình S3 và CloudFront" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.4-storage/">
+           <b> 4.4. </b> Cấu hình S3 và CloudFront
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.4-storage/4.4.1-create-s3/" title="Tạo S3 Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.4-storage/4.4.1-create-s3/">
+           <b> 4.4.1 </b> Tạo S3 Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.4-storage/4.4.1-create-s3/_index.en/" title="Create S3 Bucket" class="dd-item ">
+        <a href="/4-workshop/4.4-storage/4.4.1-create-s3/_index.en/">
+         <b> 4.4.1 </b> Create S3 Bucket
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.4-storage/4.4.2-create-cloudfront/" title="Tạo CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.4-storage/4.4.2-create-cloudfront/">
+           <b> 4.4.2 </b> Tạo CloudFront Distribution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.4-storage/4.4.2-create-cloudfront/_index.en/" title="Create CloudFront Distribution" class="dd-item ">
+        <a href="/4-workshop/4.4-storage/4.4.2-create-cloudfront/_index.en/">
+         <b> 4.4.2 </b> Create CloudFront Distribution
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.4-storage/_index.en/" title="Configure S3 and CloudFront" class="dd-item ">
+        <a href="/4-workshop/4.4-storage/_index.en/">
+         <b> 4.4. </b> Configure S3 and CloudFront
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/_index.en/" title="Workshop" class="dd-item ">
+        <a href="/4-workshop/_index.en/">
+         <b> 4. </b> Workshop
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.5-setup-email-service/" title="Lambda Email Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.5-setup-email-service/">
+           <b> 4.5. </b> Lambda Email Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/" title="Setup IAM Role &amp; Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/">
+           <b> 4.5.1. </b> Setup IAM Role &amp; Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/_index.en/" title="Setup IAM Role &amp; Lambda Function" class="dd-item ">
+        <a href="/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/_index.en/">
+         <b> 4.5.1. </b> Setup IAM Role &amp; Lambda Function
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/" title="Test Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/">
+           <b> 4.5.2. </b> Test Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/_index.en/" title="Test Lambda Function" class="dd-item ">
+        <a href="/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/_index.en/">
+         <b> 4.5.2. </b> Test Lambda Function
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/" title="Setup API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/">
+           <b> 4.5.3. </b> Setup API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/_index.en/" title="Setup API Gateway" class="dd-item ">
+        <a href="/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/_index.en/">
+         <b> 4.5.3. </b> Setup API Gateway
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/" title="Setup API Security" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/">
+           <b> 4.5.4. </b> Setup API Security
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/_index.en/" title="Setup API Security" class="dd-item ">
+        <a href="/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/_index.en/">
+         <b> 4.5.4. </b> Setup API Security
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.5-setup-email-service/_index.en/" title="Lambda Email Service" class="dd-item ">
+        <a href="/4-workshop/4.5-setup-email-service/_index.en/">
+         <b> 4.5. </b> Lambda Email Service
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/" title="Triển khai ứng dụng lên EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/">
+           <b> 4.6. </b> Triển khai ứng dụng lên EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/4.6.1-create-security-groups/" title="Tạo Security Groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/4.6.1-create-security-groups/">
+           <b> 4.6.1 </b> Tạo Security Groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/4.6.1-create-security-groups/_index.en/" title="Create Security Groups" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/4.6.1-create-security-groups/_index.en/">
+         <b> 4.6.1 </b> Create Security Groups
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/4.6.2-create-ec2/" title="Tạo EC2 Instances" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/4.6.2-create-ec2/">
+           <b> 4.6.2 </b> Tạo EC2 Instances
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/4.6.2-create-ec2/_index.en/" title="Create EC2 Instances" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/4.6.2-create-ec2/_index.en/">
+         <b> 4.6.2 </b> Create EC2 Instances
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/4.6.3-network-config/" title="Setup EC2 Environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/4.6.3-network-config/">
+           <b> 4.6.3 </b> Setup EC2 Environment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/4.6.3-network-config/_index.en/" title="Setup EC2 Environment" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/4.6.3-network-config/_index.en/">
+         <b> 4.6.3 </b> Setup EC2 Environment
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/4.6.4-setup-alb/" title="Setup Application Load Balancer" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/4.6.4-setup-alb/">
+           <b> 4.6.4 </b> Setup Application Load Balancer
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/4.6.4-setup-alb/_index.en/" title="Setup Application Load Balancer" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/4.6.4-setup-alb/_index.en/">
+         <b> 4.6.4 </b> Setup Application Load Balancer
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/4.6.5-deploy-apps/" title="Deploy Applications" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/4.6.5-deploy-apps/">
+           <b> 4.6.5 </b> Deploy Applications
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/4.6.5-deploy-apps/_index.en/" title="Deploy Applications" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/4.6.5-deploy-apps/_index.en/">
+         <b> 4.6.5 </b> Deploy Applications
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/_index.en/" title="Deploy Application to EC2" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/_index.en/">
+         <b> 4.6. </b> Deploy Application to EC2
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.6-deployment/4.6.6-test-application/" title="Test Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-workshop/4.6-deployment/4.6.6-test-application/">
+           <b> 4.6.6 </b> Test Application
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.6-deployment/4.6.6-test-application/_index.en/" title="Test Application" class="dd-item ">
+        <a href="/4-workshop/4.6-deployment/4.6.6-test-application/_index.en/">
+         <b> 4.6.6 </b> Test Application
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-workshop/4.7-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/4-workshop/4.7-cleanup/">
+           <b> 4.7. </b> Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/4-workshop/4.7-cleanup/_index.en/" title="Cleanup Resources" class="dd-item active">
+        <a href="/4-workshop/4.7-cleanup/_index.en/">
+         <b> 4.7. </b> Cleanup Resources
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-self-evaluation/" title="Tự đánh giá" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-self-evaluation/">
+           <b> 5. </b> Tự đánh giá
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/5-self-evaluation/_index.en/" title="Self-Evaluation" class="dd-item ">
+        <a href="/5-self-evaluation/_index.en/">
+         <b> 5. </b> Self-Evaluation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-feedback/" title="Chia sẻ, đóng góp ý kiến" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-feedback/">
+           <b> 6. </b> Chia sẻ, đóng góp ý kiến
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/6-feedback/_index.en/" title="Feedback &amp; Suggestions" class="dd-item ">
+        <a href="/6-feedback/_index.en/">
+         <b> 6. </b> Feedback &amp; Suggestions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> </a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Báo cáo thực tập</a> > <a href='/4-workshop/'>Workshop</a> > <a href='/4-workshop/4.7-cleanup/'>Dọn dẹp tài nguyên</a> > Cleanup Resources
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cleanup-resources">Cleanup Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Cleanup Resources
+            </h1>
+          
+
+        
+
+
+<h3 id="cleanup-resources">Cleanup Resources</h3>
+<p>After completing the workshop, you should delete the resources to avoid unexpected costs.</p>
+
+<div class="notices warning" ><p>Make sure you have backed up important data before deleting!</p>
+</div>
+
+
+<div class="notices info" ><p><strong>Deletion order is important:</strong>
+Resources must be deleted in the correct order to avoid dependency errors.</p>
+</div>
+
+<h4 id="1-delete-application-load-balancer">1. Delete Application Load Balancer</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/ec2/">EC2 Console</a> → <strong>Load Balancers</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/001-alb.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select <code>carbuyer-alb</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/002-alb.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Click <strong>Actions</strong> → <strong>Delete load balancer</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/003-alb.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>confirm</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/004-alb.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/005-alb.png?width=90pc" alt=""></p>
+
+<div class="notices tip" ><p>ALB must be deleted before Target Groups and EC2 instances.</p>
+</div>
+
+<h4 id="2-delete-target-groups">2. Delete Target Groups</h4>
+<ol>
+<li>In EC2 Console, select <strong>Target Groups</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/006-tg.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Delete each target group: <code>carbuyer-customer-tg</code>, <code>carbuyer-admin-employee-tg</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/007-tg.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Select target group → <strong>Actions</strong> → <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/008-tg.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/009-tg.png?width=90pc" alt=""></p>
+<h4 id="3-delete-ec2-instances">3. Delete EC2 Instances</h4>
+<ol>
+<li>In EC2 Console, select <strong>Instances</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/010-ec2.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select both instances: <code>carbuyer-customer-service</code>, <code>carbuyer-admin-service</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/011-ec2.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Click <strong>Instance state</strong> → <strong>Terminate instance</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/012-ec2.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm deletion</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/013-ec2.png?width=90pc" alt=""></p>
+
+<div class="notices info" ><p>Wait for instances to transition to <strong>Terminated</strong> state before continuing.</p>
+</div>
+
+<p><img src="/images/5-workshop/7.cleanup/013-ec2-2.png?width=90pc" alt=""></p>
+<h4 id="4-delete-nat-gateway">4. Delete NAT Gateway</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/vpc/">VPC Console</a> → <strong>NAT Gateways</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/014-nat.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select <code>carbuyer-nat-gateway</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/015-nat.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Click <strong>Actions</strong> → <strong>Delete NAT gateway</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/016-nat.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>delete</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/017-nat.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Wait 2-3 minutes for NAT Gateway to be completely deleted</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/018-nat.png?width=90pc" alt=""></p>
+<h4 id="5-delete-elastic-ip">5. Delete Elastic IP</h4>
+<ol>
+<li>In VPC Console, select <strong>Elastic IPs</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/019-eip.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select Elastic IP created for NAT Gateway</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/020-eip.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Click <strong>Actions</strong> → <strong>Release Elastic IP address</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/021-eip.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/022-eip.png?width=90pc" alt=""></p>
+<p><img src="/images/5-workshop/7.cleanup/022-eip-2.png?width=90pc" alt=""></p>
+
+<div class="notices warning" ><p>Unattached Elastic IPs will be charged. Delete immediately after removing NAT Gateway!</p>
+</div>
+
+<h4 id="6-delete-api-gateway">6. Delete API Gateway</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/apigateway/">API Gateway Console</a></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/023-api.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>
+<p>Select API <code>carbuyer-email-api</code></p>
+</li>
+<li>
+<p>Click <strong>Delete</strong></p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/024-api.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>confirm</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/025-api.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/026-api.png?width=90pc" alt=""></p>
+<h4 id="7-delete-lambda-function">7. Delete Lambda Function</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/lambda/">Lambda Console</a></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/028-lambda.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select function <code>carbuyer-email-service</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/029-lambda.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Click <strong>Actions</strong> → <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/030-lambda.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>confirm</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/031-lambda.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/032-lambda.png?width=90pc" alt=""></p>
+<h4 id="8-delete-cloudfront-distribution">8. Delete CloudFront Distribution</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/cloudfront/">CloudFront Console</a></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/033-cloudfront.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select distribution <code>fcj-cloudfront-carbuyer</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/034-cloudfront.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Click <strong>Disable</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/035-cloudfront.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Wait a few minutes for status to change to <strong>Disabled</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/036-cloudfront.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Select distribution, click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/037-cloudfront.png?width=90pc" alt=""></p>
+<ol start="6">
+<li>Confirm deletion</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/038-cloudfront.png?width=90pc" alt=""></p>
+
+<div class="notices info" ><p>CloudFront distribution must be <strong>Disabled</strong> before it can be deleted.</p>
+</div>
+
+<p><img src="/images/5-workshop/7.cleanup/038-cloudfront-2.png?width=90pc" alt=""></p>
+<h4 id="9-delete-s3-bucket">9. Delete S3 Bucket</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/s3/">S3 Console</a></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/039-s3.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>
+<p>Select bucket <code>carbuyer-fcj-bucket</code></p>
+</li>
+<li>
+<p>Click <strong>Empty</strong> to delete all objects</p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/041-s3.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>permanently delete</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/042-s3.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Click <strong>Empty</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/043-s3.png?width=90pc" alt=""></p>
+<ol start="6">
+<li>Go back, select bucket and click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/044-s3.png?width=90pc" alt=""></p>
+<ol start="7">
+<li>Confirm by typing bucket name: <code>carbuyer-fcj-bucket</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/045-s3.png?width=90pc" alt=""></p>
+<ol start="8">
+<li>Click <strong>Delete bucket</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/046-s3.png?width=90pc" alt=""></p>
+<h4 id="10-delete-dynamodb-tables">10. Delete DynamoDB Tables</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/dynamodb/">DynamoDB Console</a></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/047-dynamodb.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select <strong>Tables</strong> from left menu</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/048-dynamodb.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>
+<p>Select table to delete: <code>DanhGia</code>, <code>DatLichKH</code>, <code>KieuDang</code>, <code>LoaiPhuKien</code>, <code>MauXe</code>, <code>NguyenLieuXe</code>, <code>PhuKien</code>, <code>Slider</code>, <code>ThuongHieu</code>, <code>TinTuc</code>, <code>User</code>, <code>XeOto</code></p>
+</li>
+<li>
+<p>Select table, click <strong>Delete</strong></p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/050-dynamodb.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Confirm by typing: <code>confirm</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/051-dynamodb.png?width=90pc" alt=""></p>
+<ol start="6">
+<li>Verify result after deletion</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/052-dynamodb.png?width=90pc" alt=""></p>
+<h4 id="11-delete-security-groups">11. Delete Security Groups</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/ec2/">EC2 Console</a> → <strong>Security Groups</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/053-sg.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Delete security groups: <code>carbuyer-customer-sg</code>, <code>carbuyer-admin-sg</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/054-sg.png?width=90pc" alt=""></p>
+<ol start="3">
+<li>Select security group → <strong>Actions</strong> → <strong>Delete security groups</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/055-sg.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/056-sg.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Repeat the process to delete <code>carbuyer-alb-sg</code></li>
+</ol>
+<h4 id="12-delete-vpc-endpoints">12. Delete VPC Endpoints</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/vpc/">VPC Console</a> → <strong>Endpoints</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/057-enpoints.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>
+<p>Select endpoints to delete</p>
+</li>
+<li>
+<p>Select endpoint → <strong>Actions</strong> → <strong>Delete VPC endpoints</strong></p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/059-enpoint.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/060-endpoint.png?width=90pc" alt=""></p>
+<h4 id="13-delete-vpc">13. Delete VPC</h4>
+<ol>
+<li>In VPC Console, select <strong>Your VPCs</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/061-vpc.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>
+<p>Select <code>carbuyer-fcj-vpc</code></p>
+</li>
+<li>
+<p>Click <strong>Actions</strong> → <strong>Delete VPC</strong></p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/063-vpc.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>delete</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/064-vpc.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/065-vpc.png?width=90pc" alt=""></p>
+
+<div class="notices info" ><p>Deleting VPC will automatically delete related resources: subnets, route tables, internet gateway.</p>
+</div>
+
+<h4 id="14-delete-iam-roles">14. Delete IAM Roles</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/iam/">IAM Console</a> → <strong>Roles</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/066-role.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>
+<p>Select roles: <code>carbuyer-ec2-role</code>, <code>carbuyer-lambda-email-role</code></p>
+</li>
+<li>
+<p>Select <strong>Delete</strong></p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/068-role.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm by typing: <code>delete</code></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/069-role.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/070-role.png?width=90pc" alt=""></p>
+<h4 id="15-delete-iam-user">15. Delete IAM User</h4>
+<ol>
+<li>In IAM Console, select <strong>Users</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/071-user.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>Select user <code>carbuyer-app-user</code></li>
+<li>Click <strong>Delete</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/073-user.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Select <strong>Deactivate access key</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/074-user.png?width=90pc" alt=""></p>
+<ol start="5">
+<li>Confirm and select <strong>Delete user</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/075-user.png?width=90pc" alt=""></p>
+<h4 id="16-delete-key-pair">16. Delete Key Pair</h4>
+<ol>
+<li>Access <a href="https://console.aws.amazon.com/ec2/">EC2 Console</a> → <strong>Key Pairs</strong></li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/076-keypair.png?width=90pc" alt=""></p>
+<ol start="2">
+<li>
+<p>Select <code>carbuyer-keypair</code></p>
+</li>
+<li>
+<p>Click <strong>Actions</strong> → <strong>Delete</strong></p>
+</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/078-keypair.png?width=90pc" alt=""></p>
+<ol start="4">
+<li>Confirm</li>
+</ol>
+<p><img src="/images/5-workshop/7.cleanup/079-keypair.png?width=90pc" alt=""></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/4-workshop/4.7-cleanup/" title="Dọn dẹp tài nguyên"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/5-self-evaluation/" title="Tự đánh giá" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1764502934"></script>
+    <script src="/js/perfect-scrollbar.min.js?1764502934"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1764502934"></script>
+    <script src="/js/jquery.sticky.js?1764502934"></script>
+    <script src="/js/featherlight.min.js?1764502934"></script>
+    <script src="/js/highlight.pack.js?1764502934"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1764502934"></script>
+    <script src="/js/learn.js?1764502934"></script>
+    <script src="/js/hugo-learn.js?1764502934"></script>
+
+    <link href="/mermaid/mermaid.css?1764502934" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1764502934"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

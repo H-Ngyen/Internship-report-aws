@@ -1,43 +1,33 @@
 ---
 title : "Worklog Tuần 2"
-date :  "2025-01-13"
+date :  "2025-09-26"
 weight : 2
 chapter : false
 pre : " <b> 1.2. </b> "
 ---
 
 ### Mục tiêu tuần 2:
-- Nắm vững kiến thức về mạng ảo với Amazon VPC
-- Triển khai và quản lý máy chủ ảo với Amazon EC2
-- Cấp quyền cho ứng dụng với IAM Roles
+- Nghiên cứu sâu về kiến trúc mạng trong AWS, bao gồm VPC và các thành phần liên quan.
+- Bắt đầu làm việc với các dịch vụ tính toán và lưu trữ cốt lõi.
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Ngày | Công việc | Nguồn tài liệu |
-|------|-----------|----------------|
-| Thứ 2 | - Kiến thức cơ bản về mạng với VPC<br>- Tạo VPC và subnets<br>- Cấu hình Internet Gateway<br>- Thiết lập Route Tables | [Amazon VPC](https://000003.awsstudygroup.com/vi/) |
-| Thứ 3 | - Security Groups và Network ACLs<br>- NAT Gateway<br>- VPC Flow Logs<br>- VPC Peering | [Amazon VPC](https://000003.awsstudygroup.com/vi/) |
-| Thứ 4 | - Kiến thức cơ bản về EC2<br>- Các loại EC2 instances<br>- Khởi tạo EC2 instance<br>- Kết nối SSH/RDP | [Amazon EC2](https://000004.awsstudygroup.com/vi/) |
-| Thứ 5 | - EBS volumes và snapshots<br>- Security Groups cho EC2<br>- Cấp quyền ứng dụng với IAM Roles for EC2<br>- Gắn IAM Role vào EC2 | [IAM Roles for EC2](https://000048.awsstudygroup.com/vi/) |
-| Thứ 6 | - Tổng kết tuần 2<br>- Thực hành tổng hợp<br>- Review kiến thức | |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|--------------|-----------------|----------------|
+| 2 | - Bắt đầu Lab 4: Tìm hiểu về Amazon VPC và các thành phần mạng. | 22/09/2025 | 22/09/2025 | <https://000003.awsstudygroup.com/> |
+| 3 | - Hoàn thành Lab 4. <br> - Xem video và làm quiz Tuần 2: Database and storage foundation. | 23/09/2025 | 23/09/2025 | <https://000003.awsstudygroup.com/> <br> <https://specialforce.awsstudygroup.com/#/cert/week-2:-database-and-storage-foundation> |
+| 4 | - Bắt đầu Lab 5: Tìm hiểu về Amazon EC2 và các loại instance. | 24/09/2025 | 24/09/2025 | <https://000004.awsstudygroup.com/> |
+| 5 | - Hoàn thành Lab 5. <br> - Xem video và làm quiz Tuần 3: Soft skills and SoW Best practices. | 25/09/2025 | 25/09/2025 | <https://000004.awsstudygroup.com/> <br> <https://specialforce.awsstudygroup.com/#/cert/week-3:-soft-skills-and-sow-best-practices> |
+| 6 | - Thực hiện Lab 6: Tìm hiểu về IAM Roles cho EC2 và cách gán quyền. | 26/09/2025 | 26/09/2025 | <https://000048.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 2:
 
-- ✅ Hiểu rõ về VPC architecture và các thành phần
-- ✅ Tạo được VPC với public/private subnets
-- ✅ Cấu hình Security Groups và NACLs
-- ✅ Khởi tạo và quản lý EC2 instances
-- ✅ Kết nối thành công vào EC2 qua SSH/RDP
-- ✅ Hiểu về EBS và cách quản lý storage
-- ✅ Cấp quyền cho EC2 sử dụng IAM Roles
-- ✅ Áp dụng best practices cho networking và compute
+- Đã nắm được các khái niệm về VPC, Subnet, Route Table, và Security Group.
+- Có thể khởi tạo và kết nối tới một EC2 instance.
+- Hoàn thành các video và quiz của tuần 2 và 3.
 
 ### Khó khăn gặp phải:
-- Routing tables và NAT Gateway cần thời gian để hiểu rõ
-- Phân biệt Security Groups và NACLs
-- Chọn loại EC2 instance phù hợp với use case
+- Gặp khó khăn trong việc cấu hình cho Security Group và Network ACL.
 
 ### Kế hoạch tuần sau:
-- Phát triển ứng dụng với AWS Cloud9
-- Hosting website tĩnh với S3
-- Tìm hiểu về Amazon RDS
+- Bắt đầu tìm hiểu về các dịch vụ lưu trữ như S3 và cơ sở dữ liệu quan hệ trên AWS (RDS).

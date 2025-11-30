@@ -25,16 +25,15 @@ chapter : false
 
   **Vị trí thực tập:** FCJ Cloud Intern
 
-  **Thời gian thực tập:** Từ ngày 15/09/2025 đến ngày 15/12/2025
+  **Thời gian thực tập:** Từ ngày 15/09/2025 đến ngày 07/12/2025
 
-![Ảnh đại diện](/images/avatar.jpg)
+![Ảnh đại diện](/images/avatar2.jpg)
 
 ### Nội dung báo cáo
 
 1. [Nhật ký công việc](1-worklog/)
 2. [Bản đề xuất](2-proposal/)
-3. [Các bài blogs đã dịch](3-blogstranslated/)
-4. [Các events đã tham gia](4-eventparticipated/)
-5. [Workshop](5-workshop/)
-6. [Tự đánh giá](6-self-evaluation/)
-7. [Chia sẻ, đóng góp ý kiến](7-feedback/)
+3. [Các events đã tham gia](3-eventparticipated/)
+4. [Workshop](4-workshop/)
+5. [Tự đánh giá](5-self-evaluation/)
+6. [Chia sẻ, đóng góp ý kiến](6-feedback/)

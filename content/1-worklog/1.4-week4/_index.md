@@ -1,42 +1,39 @@
 ---
 title : "Worklog Tuần 4"
-date :  "2025-01-27"
+date :  "2025-10-09"
 weight : 4
 chapter : false
 pre : " <b> 1.4. </b> "
 ---
 
 ### Mục tiêu tuần 4:
-- Đơn giản hóa triển khai với Amazon Lightsail
-- Triển khai container với Lightsail Containers
-- Mở rộng quy mô ứng dụng với EC2 Auto Scaling
+- Thực hành giám sát hiệu suất hệ thống với CloudWatch.
+- Tìm hiểu về phân giải tên miền nâng cao với Route 53.
+- Làm quen với công cụ dòng lệnh AWS CLI để quản lý tài nguyên.
+- Khám phá các dịch vụ cơ sở dữ liệu NoSQL với DynamoDB.
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Ngày | Công việc | Nguồn tài liệu |
-|------|-----------|----------------|
-| Thứ 2 | - Đơn giản hóa điện toán với Lightsail<br>- Tạo Lightsail instance<br>- Deploy ứng dụng lên Lightsail<br>- Quản lý Lightsail resources | [Amazon Lightsail](https://000045.awsstudygroup.com/vi/) |
-| Thứ 3 | - Triển khai container với Lightsail Containers<br>- Tạo container service<br>- Deploy Docker containers<br>- Cấu hình load balancer | [Lightsail Containers](https://000046.awsstudygroup.com/vi/) |
-| Thứ 4 | - Mở rộng quy mô với EC2 Auto Scaling<br>- Tạo Launch Template<br>- Cấu hình Auto Scaling Group<br>- Scaling policies | [EC2 Auto Scaling](https://000006.awsstudygroup.com/vi/) |
-| Thứ 5 | - Target tracking scaling<br>- Step scaling<br>- Scheduled scaling<br>- Health checks và monitoring | [EC2 Auto Scaling](https://000006.awsstudygroup.com/vi/) |
-| Thứ 6 | - Tổng kết tuần 4<br>- So sánh Lightsail vs EC2<br>- Review scaling strategies | |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|--------------|-----------------|----------------|
+| 2 | - Hoàn thành Lab 10: Tìm hiểu về EC2 Auto Scaling và Load Balancer. | 06/10/2025 | 06/10/2025 | <https://000006.awsstudygroup.com/> |
+| 3 | - Bắt đầu Lab 11: Tìm hiểu về Amazon CloudWatch để giám sát tài nguyên. <br> - Xem video và làm quiz Tuần 6: Observability & Cost Management. | 07/10/2025 | 07/10/2025 | <https://000008.awsstudygroup.com/> <br> <https://specialforce.awsstudygroup.com/#/cert/week-6:-observability-&-cost-management> |
+| 4 | - Hoàn thành Lab 11. <br> - Bắt đầu Lab 12: Tìm hiểu Route 53 và Hybrid DNS. | 08/10/2025 | 08/10/2025 | <https://000008.awsstudygroup.com/> <br> <https://000010.awsstudygroup.com/> |
+| 5 | - Hoàn thành Lab 12. <br> - Xem video và làm quiz Tuần 7: Migrate & Modernize with AWS. | 09/10/2025 | 09/10/2025 | <https://000010.awsstudygroup.com/> <br> <https://specialforce.awsstudygroup.com/#/cert/week-7:-migrate-&-modernize-with-aws> |
+| 6 | - Bắt đầu Lab 13: Tìm hiểu về AWS CLI và các lệnh cơ bản. | 10/10/2025 | 10/10/2025 | <https://000011.awsstudygroup.com/> <https://aws.amazon.com/vi/cli/> |
 
 ### Kết quả đạt được tuần 4:
 
-- ✅ Triển khai ứng dụng trên Lightsail thành công
-- ✅ Hiểu rõ khi nào nên dùng Lightsail vs EC2
-- ✅ Deploy containerized applications với Lightsail
-- ✅ Cấu hình Auto Scaling Group cho EC2
-- ✅ Thiết lập scaling policies phù hợp
-- ✅ Monitoring và troubleshooting Auto Scaling
-- ✅ Tối ưu chi phí với Auto Scaling
+- Đã nắm vững cách cấu hình Auto Scaling và Load Balancer.
+- Có khả năng giám sát hệ thống với CloudWatch và phân tích logs.
+- Hiểu được nguyên lý hoạt động của Route 53 và Hybrid DNS.
+- Hoàn thành các video và quiz của tuần 6 và 7.
+- Bắt đầu làm quen với AWS CLI.
 
 ### Khó khăn gặp phải:
-- Lightsail có giới hạn về customization
-- Auto Scaling policies cần fine-tuning
-- Cân bằng giữa performance và cost
+- Gặp khó khăn trong việc thiết lập các chính sách cảnh báo (Alarms) trong CloudWatch.
+- Cần thời gian để ghi nhớ các lệnh và tham số của AWS CLI.
 
 ### Kế hoạch tuần sau:
-- Giám sát hệ thống với CloudWatch
-- Quản lý DNS với Route 53
-- Thao tác dòng lệnh với AWS CLI
+- Hoàn thành Lab 13 (AWS CLI) và bắt đầu tìm hiểu về cơ sở dữ liệu NoSQL DynamoDB.
+- Nghiên cứu ElastiCache và các kỹ thuật caching.

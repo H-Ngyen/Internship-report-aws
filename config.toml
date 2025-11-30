@@ -8,6 +8,11 @@ defaultContentLanguage = "vi"
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
@@ -28,6 +33,16 @@ home = ["HTML", "RSS", "JSON"]
   languageName = "Tiếng Việt"
   # no need to repeat defaultContentLanguage here
   [[languages.vi.menu.shortcuts]]
+  name = "<i class='fab fa-facebook'></i> AWS Study Group"
+  identifier = "AWS Study Group FB"
+  url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+  weight = 20
+  
+  [languages.en]
+  title = "Internship Report"
+  weight = 2
+  languageName = "English"
+  [[languages.en.menu.shortcuts]]
   name = "<i class='fab fa-facebook'></i> AWS Study Group"
   identifier = "AWS Study Group FB"
   url = "https://www.facebook.com/groups/awsstudygroupfcj/"

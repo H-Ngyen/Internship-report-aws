@@ -1,42 +1,37 @@
 ---
 title : "Worklog Tuần 3"
-date :  "2025-01-20"
+date :  "2025-10-02"
 weight : 3
 chapter : false
 pre : " <b> 1.3. </b> "
 ---
 
 ### Mục tiêu tuần 3:
-- Phát triển ứng dụng trên đám mây với AWS Cloud9
-- Hosting website tĩnh với Amazon S3
-- Quản lý cơ sở dữ liệu với Amazon RDS
+- Hiểu rõ về các dịch vụ cơ sở dữ liệu trên AWS, đặc biệt là RDS.
+- Khám phá các tùy chọn triển khai ứng dụng linh hoạt với Lightsail và Container.
+- Nắm bắt các nguyên tắc về khả năng mở rộng tự động với Auto Scaling và Load Balancing.
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Ngày | Công việc | Nguồn tài liệu |
-|------|-----------|----------------|
-| Thứ 2 | - Phát triển ứng dụng với AWS Cloud9<br>- Tạo Cloud9 environment<br>- Viết code và test trên Cloud9<br>- Tích hợp với Git | [AWS Cloud9](https://000049.awsstudygroup.com/vi/) |
-| Thứ 3 | - Hosting Website tĩnh với S3<br>- Tạo S3 bucket<br>- Upload static files<br>- Cấu hình static website hosting<br>- S3 bucket policies | [Amazon S3](https://000057.awsstudygroup.com/vi/) |
-| Thứ 4 | - Kiến thức cơ bản về RDS<br>- Các DB engines được hỗ trợ<br>- Tạo RDS instance<br>- DB subnet groups | [Amazon RDS](https://000005.awsstudygroup.com/vi/) |
-| Thứ 5 | - Kết nối ứng dụng với RDS<br>- RDS security groups<br>- Backup và restore<br>- Multi-AZ deployment<br>- Read replicas | [Amazon RDS](https://000005.awsstudygroup.com/vi/) |
-| Thứ 6 | - Tổng kết tuần 3<br>- Deploy ứng dụng hoàn chỉnh<br>- Review và tối ưu | |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|--------------|-----------------|----------------|
+| 2 | - Bắt đầu Lab 7: Tìm hiểu về Amazon RDS và các tính năng quản lý cơ sở dữ liệu. | 29/09/2025 | 29/09/2025 | <https://000005.awsstudygroup.com/> |
+| 3 | - Hoàn thành Lab 7. <br> - Xem video và làm quiz Tuần 4: Amazon EKS. | 30/09/2025 | 30/09/2025 | <https://000005.awsstudygroup.com/> <br> <https://specialforce.awsstudygroup.com/#/cert/week-4:-amazon-eks> |
+| 4 | - Bắt đầu Lab 8: Khám phá Amazon Lightsail và triển khai ứng dụng đơn giản. | 01/10/2025 | 01/10/2025 | <https://000045.awsstudygroup.com/> |
+| 5 | - Hoàn thành Lab 8. <br> - Bắt đầu Lab 9: Triển khai ứng dụng với Lightsail Container. <br> - Xem video và làm quiz Tuần 5: Amazon ECS and Fargate. | 02/10/2025 | 02/10/2025 | <https://000045.awsstudygroup.com/> <br> <https://000046.awsstudygroup.com/> <br> <https://specialforce.awsstudygroup.com/#/cert/week-5:-amazon-ecs-and-fargate> |
+| 6 | - Bắt đầu Lab 10: Tìm hiểu về EC2 Auto Scaling và Load Balancer. | 03/10/2025 | 03/10/2025 | <https://000006.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 3:
 
-- ✅ Sử dụng thành thạo AWS Cloud9 để phát triển
-- ✅ Deploy website tĩnh lên S3 thành công
-- ✅ Cấu hình S3 bucket policies và permissions
-- ✅ Tạo và quản lý RDS database instances
-- ✅ Kết nối ứng dụng với RDS database
-- ✅ Hiểu về RDS backup, restore và high availability
-- ✅ Áp dụng security best practices cho S3 và RDS
+- Đã nắm được cách tạo và quản lý cơ sở dữ liệu trên RDS.
+- Có khả năng triển khai ứng dụng trên Lightsail và hiểu về Lightsail Container.
+- Bắt đầu làm quen với các khái niệm về Auto Scaling Group và Load Balancer.
+- Hoàn thành video và quiz của tuần 4 và 5.
 
 ### Khó khăn gặp phải:
-- S3 bucket policies cần hiểu rõ về JSON syntax
-- RDS security groups và networking cần cấu hình cẩn thận
-- Chọn DB instance type phù hợp với workload
+- Gặp khó khăn trong việc cấu hình cho RDS như Security Group và Subnet Group.
+- Còn mơ hồ trong việc phân biệt các tùy chọn của Lightsail và các dịch vụ AWS khác.
 
 ### Kế hoạch tuần sau:
-- Đơn giản hóa điện toán với Amazon Lightsail
-- Triển khai container với Lightsail Containers
-- Mở rộng quy mô với EC2 Auto Scaling
+- Hoàn thành Lab 10 và bắt đầu tìm hiểu về giám sát với CloudWatch.
+- Nghiên cứu về DNS với Route 53.

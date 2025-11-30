@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Import Sample Data :: Internship Report</title>
+
+    
+    <link href="/css/nucleus.css?1764526808" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1764526808" rel="stylesheet">
+    <link href="/css/hybrid.css?1764526808" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1764526808" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1764526808" rel="stylesheet">
+    <link href="/css/auto-complete.css?1764526808" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1764526808" rel="stylesheet">
+    <link href="/css/theme.css?1764526808" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1764526808" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1764526808" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1764526808"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/4-workshop/4.3-database/4.3.2-import-data/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1764526808"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1764526808"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1764526808"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/" title="Work Log" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/">
+           <b> 1. </b> Work Log
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.1-week1/" title="Week 1 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.1-week1/">
+           <b> 1.1. </b> Week 1 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.2-week2/" title="Week 2 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.2-week2/">
+           <b> 1.2. </b> Week 2 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.3-week3/" title="Week 3 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.3-week3/">
+           <b> 1.3. </b> Week 3 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.4-week4/" title="Week 4 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.4-week4/">
+           <b> 1.4. </b> Week 4 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.5-week5/" title="Week 5 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.5-week5/">
+           <b> 1.5. </b> Week 5 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.6-week6/" title="Week 6 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.6-week6/">
+           <b> 1.6. </b> Week 6 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.7-week7/" title="Week 7 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.7-week7/">
+           <b> 1.7. </b> Week 7 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.8-week8/" title="Week 8 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.8-week8/">
+           <b> 1.8. </b> Week 8 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.9-week9/" title="Week 9 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.9-week9/">
+           <b> 1.9. </b> Week 9 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.10-week10/" title="Week 10 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.10-week10/">
+           <b> 1.10. </b> Week 10 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.11-week11/" title="Week 11 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.11-week11/">
+           <b> 1.11. </b> Week 11 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/1-worklog/1.12-week12/" title="Week 12 Worklog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/1-worklog/1.12-week12/">
+           <b> 1.12. </b> Week 12 Worklog
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/2-proposal/" title="Project Proposal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/2-proposal/">
+           <b> 2. </b> Project Proposal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/3-eventparticipated/" title="Events Participated" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/3-eventparticipated/">
+           <b> 3. </b> Events Participated
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/" title="Workshop" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/4-workshop/">
+           <b> 4. </b> Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.1-introduce/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.1-introduce/">
+           <b> 4.1. </b> Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.2-prerequiste/" title="Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.2-prerequiste/">
+           <b> 4.2. </b> Prerequisites
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.2-prerequiste/4.2.1-create-vpc/" title="Create VPC and Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.2-prerequiste/4.2.1-create-vpc/">
+           <b> 4.2.1. </b> Create VPC and Network
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/" title="Create IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/">
+           <b> 4.2.2 </b> Create IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/" title="Create IAM User and Access Keys" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/">
+           <b> 4.2.3 </b> Create IAM User and Access Keys
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.3-database/" title="Create DynamoDB Database" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/4-workshop/4.3-database/">
+           <b> 4.3. </b> Create DynamoDB Database
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.3-database/4.3.1-create-tables/" title="Create DynamoDB Tables" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.3-database/4.3.1-create-tables/">
+           <b> 4.3.1 </b> Create DynamoDB Tables
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.3-database/4.3.2-import-data/" title="Import Sample Data" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/en/4-workshop/4.3-database/4.3.2-import-data/">
+           <b> 4.3.2 </b> Import Sample Data
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.4-storage/" title="Configure S3 and CloudFront" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.4-storage/">
+           <b> 4.4. </b> Configure S3 and CloudFront
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.4-storage/4.4.1-create-s3/" title="Create S3 Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.4-storage/4.4.1-create-s3/">
+           <b> 4.4.1 </b> Create S3 Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.4-storage/4.4.2-create-cloudfront/" title="Create CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.4-storage/4.4.2-create-cloudfront/">
+           <b> 4.4.2 </b> Create CloudFront Distribution
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.5-setup-email-service/" title="Lambda Email Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.5-setup-email-service/">
+           <b> 4.5. </b> Lambda Email Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/" title="Setup IAM Role &amp; Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/">
+           <b> 4.5.1. </b> Setup IAM Role &amp; Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/" title="Test Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/">
+           <b> 4.5.2. </b> Test Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/" title="Setup API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/">
+           <b> 4.5.3. </b> Setup API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/" title="Setup API Security" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/">
+           <b> 4.5.4. </b> Setup API Security
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/" title="Deploy Application to EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/">
+           <b> 4.6. </b> Deploy Application to EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/4.6.1-create-security-groups/" title="Create Security Groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/4.6.1-create-security-groups/">
+           <b> 4.6.1 </b> Create Security Groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/4.6.2-create-ec2/" title="Create EC2 Instances" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/4.6.2-create-ec2/">
+           <b> 4.6.2 </b> Create EC2 Instances
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/4.6.3-network-config/" title="Setup EC2 Environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/4.6.3-network-config/">
+           <b> 4.6.3 </b> Setup EC2 Environment
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/4.6.4-setup-alb/" title="Setup Application Load Balancer" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/4.6.4-setup-alb/">
+           <b> 4.6.4 </b> Setup Application Load Balancer
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/4.6.5-deploy-apps/" title="Deploy Applications" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/4.6.5-deploy-apps/">
+           <b> 4.6.5 </b> Deploy Applications
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.6-deployment/4.6.6-test-application/" title="Test Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.6-deployment/4.6.6-test-application/">
+           <b> 4.6.6 </b> Test Application
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/4-workshop/4.7-cleanup/" title="Cleanup Resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/4-workshop/4.7-cleanup/">
+           <b> 4.7. </b> Cleanup Resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/5-self-evaluation/" title="Self-Evaluation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/5-self-evaluation/">
+           <b> 5. </b> Self-Evaluation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/6-feedback/" title="Feedback &amp; Contributions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/6-feedback/">
+           <b> 6. </b> Feedback &amp; Contributions
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/4-workshop/4.3-database/4.3.2-import-data/">Tiếng Việt</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/en/4-workshop/4.3-database/4.3.2-import-data/" selected>English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Internship Report</a> > <a href='/en/4-workshop/'>Workshop</a> > <a href='/en/4-workshop/4.3-database/'>Create DynamoDB Database</a> > Import Sample Data
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#import-sample-data-into-dynamodb">Import Sample Data into DynamoDB</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Import Sample Data
+            </h1>
+          
+
+        
+
+
+
+	<h3 id="import-sample-data-into-dynamodb">Import Sample Data into DynamoDB</h3>
+<p>After creating tables in <a href="/en/4-workshop/4.3-database/4.3.1-create-tables/">step 4.3.1 Create tables</a>, continue importing sample data using AWS CloudShell.</p>
+<h4 id="import-data">Import Data</h4>
+<ol>
+<li>
+<p>To write data, use <strong><code>put-item</code></strong> command</p>
+</li>
+<li>
+<p>Continue on AWS CloudShell, type:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws dynamodb put-item --table-name DanhGia --item <span style="color:#e6db74">&#39;{&#34;id&#34;:{&#34;S&#34;:&#34;DG1760497475409&#34;},&#34;tenKH&#34;:{&#34;S&#34;:&#34;Van B&#34;},&#34;hinhAnh&#34;:{&#34;S&#34;:&#34;1760497475406-65792375.jpg&#34;},&#34;noiDung&#34;:{&#34;S&#34;:&#34;Well-maintained vehicle with complete information, thorough inspection, reasonable and clear pricing&#34;},&#34;ngayTao&#34;:{&#34;S&#34;:&#34;2025-10-15T03:04:35.409Z&#34;}}&#39;</span> --region ap-southeast-1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aws dynamodb put-item --table-name DanhGia --item <span style="color:#e6db74">&#39;{&#34;id&#34;:{&#34;S&#34;:&#34;DG1760497598834&#34;},&#34;tenKH&#34;:{&#34;S&#34;:&#34;Van A&#34;},&#34;hinhAnh&#34;:{&#34;S&#34;:&#34;1760497598832-300428767.jpg&#34;},&#34;noiDung&#34;:{&#34;S&#34;:&#34;Vehicle&#39;</span>s condition reported accurately, allows test drive to check <span style="color:#66d9ef">for</span> any issues<span style="color:#e6db74">&#34;},&#34;</span>ngayTao<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>2025-10-15T03:06:38.834Z<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD001<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Sedan<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD002<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>SUV<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD003<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Hatchback<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD004<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Coupe<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD005<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Convertible<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD006<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Pickup<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name KieuDang --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>KD007<span style="color:#e6db74">&#34;},&#34;</span>tenKieuDang<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Minivan<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK001<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Camera<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK002<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Sensor<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK003<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Bluetooth Speaker<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK004<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Convex Mirror<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK005<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Phone Charger<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK006<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Tire Pump<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK007<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Seat Cover<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK008<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Floor Mat<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK009<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Multipurpose Charger<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK010<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>GPS Positioning System<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK011<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LED Lights<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK012<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Sunshade<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK013<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Airbag<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name LoaiPhuKien --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>LPK999<span style="color:#e6db74">&#34;},&#34;</span>tenLoai<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Other<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX001<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Black<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX002<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>White<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX003<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Gray<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX004<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Silver<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX005<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Red<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX006<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Blue<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX007<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Yellow<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX008<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Brown<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name MauXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MX1760493365226<span style="color:#e6db74">&#34;},&#34;</span>tenMau<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Pink<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name NguyenLieuXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>NL001<span style="color:#e6db74">&#34;},&#34;</span>tenNguyenLieu<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Petrol<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name NguyenLieuXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>NL002<span style="color:#e6db74">&#34;},&#34;</span>tenNguyenLieu<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Diesel<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name NguyenLieuXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>NL003<span style="color:#e6db74">&#34;},&#34;</span>tenNguyenLieu<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Electric<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name NguyenLieuXe --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>NL004<span style="color:#e6db74">&#34;},&#34;</span>tenNguyenLieu<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Hybrid<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name Slider --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>SL001<span style="color:#e6db74">&#34;},&#34;</span>tieuDe<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Slide 1<span style="color:#e6db74">&#34;},&#34;</span>hinhAnh<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>/Public/images/SlideShow/img5.png<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name Slider --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>SL002<span style="color:#e6db74">&#34;},&#34;</span>tieuDe<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Slide 2<span style="color:#e6db74">&#34;},&#34;</span>hinhAnh<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>/Public/images/SlideShow/img2.png<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name Slider --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>SL003<span style="color:#e6db74">&#34;},&#34;</span>tieuDe<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Slide 3<span style="color:#e6db74">&#34;},&#34;</span>hinhAnh<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>/Public/images/SlideShow/img3.jpg<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE001<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Toyota<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE002<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Honda<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE003<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Ford<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE004<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Hyundai<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE005<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Kia<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE006<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Mazda<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE007<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Chevrolet<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE008<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>BMW<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE009<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Mercedes-Benz<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE010<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Audi<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE011<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Nissan<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE012<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Mitsubishi<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE013<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Lexus<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE014<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Volkswagen<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THXE015<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Subaru<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>TH1760488658291<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>MG<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>TH1760493095566<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Porsche<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THKHAC0<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Other<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>0<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK001<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Bosch<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK002<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Pioneer<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK003<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Bridgestone<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK004<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Michelin<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK005<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Philips<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK006<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Hankook<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK007<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Kenwood<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK008<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Sony<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK009<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Thule<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK010<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Yokohama<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK011<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Mobil 1<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK012<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Castrol<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK013<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Denso<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK014<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>NGK<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>THPK015<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>Goodyear<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>TH1760491477533<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>ICAR<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">aws dynamodb put-item --table-name ThuongHieu --item &#39;{&#34;</span>id<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>TH1760492080519<span style="color:#e6db74">&#34;},&#34;</span>TenTH<span style="color:#e6db74">&#34;:{&#34;</span>S<span style="color:#e6db74">&#34;:&#34;</span>VIETMAP<span style="color:#e6db74">&#34;},&#34;</span>idPhanLoaiTH<span style="color:#e6db74">&#34;:{&#34;</span>N<span style="color:#e6db74">&#34;:&#34;</span>1<span style="color:#e6db74">&#34;}}&#39; --region ap-southeast-1
+</span></span></span></code></pre></div><ol start="3">
+<li>Results:</li>
+</ol>
+<p><img src="/images/5-workshop/3.dynamodb/005-dynamoDB.png?width=90pc" alt="Import Data"></p>
+<h4 id="verify-data">Verify Data</h4>
+<p>Check number of items in each table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws dynamodb scan --table-name DanhGia --select COUNT --region ap-southeast-1
+</span></span><span style="display:flex;"><span>aws dynamodb scan --table-name KieuDang --select COUNT --region ap-southeast-1
+</span></span><span style="display:flex;"><span>aws dynamodb scan --table-name MauXe --select COUNT --region ap-southeast-1
+</span></span></code></pre></div><h4 id="import-complex-data-phukien-tintuc-xeoto-user">Import Complex Data (PhuKien, TinTuc, XeOto, User)</h4>
+<p>Tables PhuKien, TinTuc, XeOto, User have complex data. Use the available backup/restore script:</p>
+<ol>
+<li>Clone project and run restore script:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clone project</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/khaizr0/RAB_Data.git
+</span></span><span style="display:flex;"><span>cd RAB_Data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create package.json</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;{}&#39;</span> &gt; package.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install dependencies</span>
+</span></span><span style="display:flex;"><span>npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run restore script</span>
+</span></span><span style="display:flex;"><span>node restoreData.js backup-2025-10-15T03-13-22-686Z.json
+</span></span></code></pre></div><ol start="2">
+<li>Results:</li>
+</ol>
+<pre tabindex="0"><code>Importing PhuKien...
+✓ Imported 2 items to PhuKien
+Importing TinTuc...
+✓ Imported 2 items to TinTuc
+Importing XeOto...
+✓ Imported 2 items to XeOto
+
+Import completed!
+</code></pre><p><img src="/images/5-workshop/3.dynamodb/006-dynamoDB.png?width=90pc" alt="Import Complex Data"></p>
+<p>Database is ready for the application!</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/4-workshop/4.3-database/4.3.1-create-tables/" title="Create DynamoDB Tables"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/4-workshop/4.4-storage/" title="Configure S3 and CloudFront" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1764526808"></script>
+    <script src="/js/perfect-scrollbar.min.js?1764526808"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1764526808"></script>
+    <script src="/js/jquery.sticky.js?1764526808"></script>
+    <script src="/js/featherlight.min.js?1764526808"></script>
+    <script src="/js/highlight.pack.js?1764526808"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1764526808"></script>
+    <script src="/js/learn.js?1764526808"></script>
+    <script src="/js/hugo-learn.js?1764526808"></script>
+
+    <link href="/mermaid/mermaid.css?1764526808" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1764526808"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
