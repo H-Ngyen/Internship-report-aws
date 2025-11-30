@@ -27,7 +27,7 @@ chapter : false
 
   **Thời gian thực tập:** Từ ngày 15/09/2025 đến ngày 07/12/2025
 
-![Ảnh đại diện](/images/avatar2.jpg)
+![Ảnh đại diện](/Internship-report-aws/images/avatar.jpg)
 
 ### Nội dung báo cáo
 

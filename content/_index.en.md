@@ -27,7 +27,7 @@ chapter : false
 
   **Internship Period:** From 15/09/2025 to 07/12/2025
 
-![Avatar](/images/avatar2.jpg)
+![Avatar](/Internship-report-aws/images/avatar.jpg)
 
 ### Report Content
 
