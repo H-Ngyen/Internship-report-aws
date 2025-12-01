@@ -27,6 +27,15 @@ chapter : false
 
   **Thời gian thực tập:** Từ ngày 15/09/2025 đến ngày 07/12/2025
 
+<style>
+/* Resize avatar image on homepage */
+#body-inner img[alt="Ảnh đại diện"] {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
 ![Ảnh đại diện](/Internship-report-aws/images/avatar.jpg)
 
 ### Nội dung báo cáo

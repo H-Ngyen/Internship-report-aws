@@ -27,6 +27,15 @@ chapter : false
 
   **Internship Period:** From 15/09/2025 to 07/12/2025
 
+<style>
+/* Resize avatar image on homepage */
+#body-inner img[alt="Ảnh đại diện"] {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
 ![Avatar](/Internship-report-aws/images/avatar.jpg)
 
 ### Report Content
