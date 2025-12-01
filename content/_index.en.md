@@ -29,7 +29,7 @@ chapter : false
 
 <style>
 /* Resize avatar image on homepage */
-#body-inner img[alt="Ảnh đại diện"] {
+#body-inner img[alt="Avatar"] {
   width: 500px;
   max-width: 100%;
   height: auto;
