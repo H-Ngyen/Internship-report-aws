@@ -36,7 +36,7 @@ chapter : false
 }
 </style>
 
-![Avatar](/Internship-report-aws/images/avatar.jpg)
+![Avatar](/Internship-report-aws/images/avatar1.jpg)
 
 ### Report Content
 

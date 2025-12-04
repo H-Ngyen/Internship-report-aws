@@ -36,7 +36,7 @@ chapter : false
 }
 </style>
 
-![Ảnh đại diện](/Internship-report-aws/images/avatar.jpg)
+![Ảnh đại diện](/Internship-report-aws/images/avatar1.jpg)
 
 ### Nội dung báo cáo
 

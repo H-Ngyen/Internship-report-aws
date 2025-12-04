@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Import dữ liệu mẫu on Deploy Node.js với AWS Serverless</title>
-    <link>//localhost:1313/4-workshop/4.3-database/4.3.2-import-data/</link>
+    <link>http://localhost:1313/Internship-report-aws/4-workshop/4.3-database/4.3.2-import-data/</link>
     <description>Recent content in Import dữ liệu mẫu on Deploy Node.js với AWS Serverless</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313/4-workshop/4.3-database/4.3.2-import-data/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Internship-report-aws/4-workshop/4.3-database/4.3.2-import-data/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

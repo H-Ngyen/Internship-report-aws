@@ -2,587 +2,587 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/en/1-worklog/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/</loc>
     <lastmod>2025-11-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.1-week1/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.1-week1/</loc>
     <lastmod>2025-09-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.1-week1/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.1-week1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.1-week1/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.1-week1/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.3-database/4.3.1-create-tables/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.3-database/4.3.1-create-tables/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.3-database/4.3.1-create-tables/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.3-database/4.3.1-create-tables/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.3-database/4.3.1-create-tables/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.3-database/4.3.1-create-tables/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.4-storage/4.4.1-create-s3/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.4-storage/4.4.1-create-s3/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.4-storage/4.4.1-create-s3/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.4-storage/4.4.1-create-s3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.4-storage/4.4.1-create-s3/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.4-storage/4.4.1-create-s3/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/4.6.1-create-security-groups/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.1-create-security-groups/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/4.6.1-create-security-groups/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/4.6.1-create-security-groups/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/4.6.1-create-security-groups/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.1-create-security-groups/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.2-prerequiste/4.2.1-create-vpc/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/4.2.1-create-vpc/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.2-prerequiste/4.2.1-create-vpc/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.2-prerequiste/4.2.1-create-vpc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.2-prerequiste/4.2.1-create-vpc/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/4.2.1-create-vpc/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/"
+                href="http://localhost:1313/Internship-report-aws/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/"
+                href="http://localhost:1313/Internship-report-aws/en/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.1-introduce/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.1-introduce/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.1-introduce/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.1-introduce/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.1-introduce/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.1-setup-iam-lambda/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/2-proposal/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/2-proposal/</loc>
     <lastmod>2025-11-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/2-proposal/"
+                href="http://localhost:1313/Internship-report-aws/2-proposal/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/2-proposal/"
+                href="http://localhost:1313/Internship-report-aws/en/2-proposal/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.2-week2/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.2-week2/</loc>
     <lastmod>2025-09-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.2-week2/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.2-week2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.2-week2/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.2-week2/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.4-storage/4.4.2-create-cloudfront/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.4-storage/4.4.2-create-cloudfront/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.4-storage/4.4.2-create-cloudfront/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.4-storage/4.4.2-create-cloudfront/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.4-storage/4.4.2-create-cloudfront/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.4-storage/4.4.2-create-cloudfront/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/4.6.2-create-ec2/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.2-create-ec2/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/4.6.2-create-ec2/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/4.6.2-create-ec2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/4.6.2-create-ec2/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.2-create-ec2/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/4.2.2-create-iam-role/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.3-database/4.3.2-import-data/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.3-database/4.3.2-import-data/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.3-database/4.3.2-import-data/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.3-database/4.3.2-import-data/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.3-database/4.3.2-import-data/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.3-database/4.3.2-import-data/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.2-prerequiste/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.2-prerequiste/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.2-prerequiste/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.2-test-lambda/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.3-week3/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.3-week3/</loc>
     <lastmod>2025-10-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.3-week3/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.3-week3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.3-week3/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.3-week3/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.3-database/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.3-database/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.3-database/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.3-database/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.3-database/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.3-database/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.2-prerequiste/4.2.3-create-access-keys/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.3-setup-api-gateway/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/4.6.3-network-config/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.3-network-config/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/4.6.3-network-config/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/4.6.3-network-config/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/4.6.3-network-config/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.3-network-config/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.4-week4/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.4-week4/</loc>
     <lastmod>2025-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.4-week4/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.4-week4/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.4-week4/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.4-week4/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.4-storage/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.4-storage/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.4-storage/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.4-storage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.4-storage/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.4-storage/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/3-eventparticipated/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/3-eventparticipated/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/3-eventparticipated/"
+                href="http://localhost:1313/Internship-report-aws/3-eventparticipated/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/3-eventparticipated/"
+                href="http://localhost:1313/Internship-report-aws/en/3-eventparticipated/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/4.5.4-setup-api-security/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/4.6.4-setup-alb/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.4-setup-alb/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/4.6.4-setup-alb/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/4.6.4-setup-alb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/4.6.4-setup-alb/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.4-setup-alb/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/5-self-evaluation/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/5-self-evaluation/</loc>
     <lastmod>2025-11-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/5-self-evaluation/"
+                href="http://localhost:1313/Internship-report-aws/5-self-evaluation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/5-self-evaluation/"
+                href="http://localhost:1313/Internship-report-aws/en/5-self-evaluation/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.5-week5/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.5-week5/</loc>
     <lastmod>2025-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.5-week5/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.5-week5/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.5-week5/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.5-week5/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/4.6.5-deploy-apps/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.5-deploy-apps/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/4.6.5-deploy-apps/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/4.6.5-deploy-apps/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/4.6.5-deploy-apps/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.5-deploy-apps/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.5-setup-email-service/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.5-setup-email-service/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.5-setup-email-service/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.5-setup-email-service/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.5-setup-email-service/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/6-feedback/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/6-feedback/</loc>
     <lastmod>2025-11-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/6-feedback/"
+                href="http://localhost:1313/Internship-report-aws/6-feedback/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/6-feedback/"
+                href="http://localhost:1313/Internship-report-aws/en/6-feedback/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.6-week6/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.6-week6/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.6-week6/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.6-week6/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.6-week6/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.6-week6/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.6-deployment/4.6.6-test-application/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.6-test-application/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.6-deployment/4.6.6-test-application/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.6-deployment/4.6.6-test-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.6-deployment/4.6.6-test-application/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.6-deployment/4.6.6-test-application/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.7-week7/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.7-week7/</loc>
     <lastmod>2025-10-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.7-week7/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.7-week7/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.7-week7/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.7-week7/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/4-workshop/4.7-cleanup/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/4-workshop/4.7-cleanup/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/4-workshop/4.7-cleanup/"
+                href="http://localhost:1313/Internship-report-aws/4-workshop/4.7-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/4-workshop/4.7-cleanup/"
+                href="http://localhost:1313/Internship-report-aws/en/4-workshop/4.7-cleanup/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.8-week8/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.8-week8/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.8-week8/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.8-week8/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.8-week8/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.8-week8/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.9-week9/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.9-week9/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.9-week9/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.9-week9/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.9-week9/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.9-week9/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.10-week10/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.10-week10/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.10-week10/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.10-week10/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.10-week10/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.10-week10/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.11-week11/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.11-week11/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.11-week11/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.11-week11/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.11-week11/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.11-week11/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/1-worklog/1.12-week12/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/1-worklog/1.12-week12/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/1-worklog/1.12-week12/"
+                href="http://localhost:1313/Internship-report-aws/1-worklog/1.12-week12/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/1-worklog/1.12-week12/"
+                href="http://localhost:1313/Internship-report-aws/en/1-worklog/1.12-week12/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/categories/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/categories/"
+                href="http://localhost:1313/Internship-report-aws/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/categories/"
+                href="http://localhost:1313/Internship-report-aws/en/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/tags/</loc>
+    <loc>http://localhost:1313/Internship-report-aws/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/tags/"
+                href="http://localhost:1313/Internship-report-aws/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/en/tags/"
+                href="http://localhost:1313/Internship-report-aws/en/tags/"
                 />
   </url>
 </urlset>

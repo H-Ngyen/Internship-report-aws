@@ -1,6 +1,9 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
+# Base URL for GitHub Pages deployment
+baseURL = "https://h-ngyen.github.io/Internship-report-aws/"
+
 # Set default content language to Vietnamese
 defaultContentLanguage = "vi"
 
