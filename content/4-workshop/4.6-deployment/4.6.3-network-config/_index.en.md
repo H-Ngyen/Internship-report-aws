@@ -15,7 +15,7 @@ In this section, we will connect and configure the environment for the EC2 insta
 1. In **VPC Console**, select **NAT Gateways**
 2. Select **Create NAT Gateway**
 
-![](/images/5-workshop/6.deployment/023-nat-gateway.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/023-nat-gateway.png?width=90pc)
 
 3. Configure NAT Gateway:
    - **Name**: `carbuyer-nat-gateway`
@@ -25,39 +25,39 @@ In this section, we will connect and configure the environment for the EC2 insta
    
 4. Select **Create NAT Gateway**
 
-![](/images/5-workshop/6.deployment/026-nat-gateway.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/026-nat-gateway.png?width=90pc)
 
 5. Update Route Table for Private Subnet AZ 1b:
    - In **VPC Console**, select **Route Tables**
    - Find route table for **Private Subnet AZ 1b** (carbuyer-fcj-rtb-private2-ap-southeast-1b)
    - Select route table → **Routes** tab → **Edit routes**
 
-![](/images/5-workshop/6.deployment/028-route-table.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/028-route-table.png?width=90pc)
 
    - **Add route**:
      - **Destination**: `0.0.0.0/0`
      - **Target**: NAT Gateway just created
    - **Save changes**
 
-![](/images/5-workshop/6.deployment/027-route-table.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/027-route-table.png?width=90pc)
 
 #### 2. Connect to Customer Service Instance
 
 1. In **EC2 Console**, select **Instances**
 
-![](/images/5-workshop/6.deployment/035-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/035-connect.png?width=90pc)
 
 2. Select instance `carbuyer-customer-service`, select **Connect**
 
-![](/images/5-workshop/6.deployment/036-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/036-connect.png?width=90pc)
 
 3. Select **EC2 Instance Connect** tab
 
-![](/images/5-workshop/6.deployment/038-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/038-connect.png?width=90pc)
 
 4. Select **Connect** to open terminal in browser
 
-![](/images/5-workshop/6.deployment/037-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/037-connect.png?width=90pc)
 
 #### 3. Install Node.js and PM2
 
@@ -76,7 +76,7 @@ sudo yum install -y nodejs
 sudo npm install -g pm2
 ```
 
-![](/images/5-workshop/6.deployment/039-node.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/039-node.png?width=90pc)
 
 2. Verify installation:
 
@@ -86,7 +86,7 @@ npm --version
 pm2 --version
 ```
 
-![](/images/5-workshop/6.deployment/040-pm2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/040-pm2.png?width=90pc)
 
 #### 4. Connect to Admin Service Instance (via Bastion)
 
@@ -109,7 +109,7 @@ chmod 400 ~/.ssh/carbuyer-keypair.pem
 ssh -o StrictHostKeyChecking=accept-new -i ~/.ssh/carbuyer-keypair.pem ec2-user@ADMIN_PRIVATE_IP
 ```
 
-![](/images/5-workshop/6.deployment/042-bastion.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/042-bastion.png?width=90pc)
 
 3. Install Node.js and PM2 for Admin Service:
 
@@ -134,6 +134,6 @@ npm --version
 pm2 --version
 ```
 
-![](/images/5-workshop/6.deployment/043-confirm-admin-pm2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/043-confirm-admin-pm2.png?width=90pc)
 
 Next, we will setup Application Load Balancer

@@ -14,7 +14,7 @@ Chào mừng bạn đến với workshop về Amazon EC2, DynamoDB, S3, CloudFro
 
 Trong workshop này, chúng ta sẽ tìm hiểu và triển khai một ứng dụng Node.js lên AWS sử dụng kiến trúc multi-tier. Chúng ta sẽ khám phá cách thiết lập VPC networking, triển khai EC2 instances, cấu hình DynamoDB database, và triển khai serverless email service với Lambda. Sau đó, chúng ta sẽ áp dụng kiến thức đã học bằng cách triển khai một ứng dụng thương mại điện tử thực tế tên là CarBuyer trên các dịch vụ này.
 
-![](/images/nodejs_x_aws.png)
+![](/Internship-report-aws/images/nodejs_x_aws.png)
 
 
 #### Thời gian

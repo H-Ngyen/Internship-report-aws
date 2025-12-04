@@ -10,7 +10,7 @@ pre : " <b> 4.3.1 </b> "
 
 2. **Open ap-southeast-1 environment**
 
-![](/images/5-workshop/3.dynamodb/001-dynamoDB.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/3.dynamodb/001-dynamoDB.png?width=90pc)
 
 3. Type command **`aws configure`**
 
@@ -21,7 +21,7 @@ pre : " <b> 4.3.1 </b> "
 - **Default region name**: `ap-southeast-1`
 - **Default output format**
 
-![](/images/5-workshop/3.dynamodb/002-dynamoDB.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/3.dynamodb/002-dynamoDB.png?width=90pc)
 
 5. To create table, use **`create-table`** command. Type:
 
@@ -55,11 +55,11 @@ aws dynamodb create-table --table-name XeOto --attribute-definitions AttributeNa
 
 - Results on AWS CloudShell:
 
-![](/images/5-workshop/3.dynamodb/003-dynamoDB.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/3.dynamodb/003-dynamoDB.png?width=90pc)
 
 - Results on the interface:
 
-![Create Tables](/images/5-workshop/3.dynamodb/004-dynamoDB.png?width=90pc)
+![Create Tables](/Internship-report-aws/images/5-workshop/3.dynamodb/004-dynamoDB.png?width=90pc)
 
 7. Verify created tables
 

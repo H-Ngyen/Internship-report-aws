@@ -13,7 +13,7 @@ In this section, we will test the Lambda function with 2 types of emails: Reset 
 #### 1. Create Test Event for Reset Password
 
 In the **Test** tab:
-![](/images/5-workshop/5.email/009-test.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/009-test.png?width=90pc)
 
 **Test event action:**
 - Select **Create new event**
@@ -21,7 +21,7 @@ In the **Test** tab:
 **Invocation type:**
 - Select **Synchronous**
 
-![](/images/5-workshop/5.email/010-test.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/010-test.png?width=90pc)
 
 **Event name:**
 - Enter: `test-reset-password`
@@ -51,17 +51,17 @@ Click **Save**
 
 Click **Test** to run the test event. Check the results in **Execution results**:
 
-![](/images/5-workshop/5.email/010-run-test-reset.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/010-run-test-reset.png?width=90pc)
 
-![](/images/5-workshop/5.email/011-run-test-reset.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/011-run-test-reset.png?width=90pc)
 
-![](/images/5-workshop/5.email/012-run-test-reset.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/012-run-test-reset.png?width=90pc)
 
 #### 3. Create Test Event for Booking Confirmation
 
 Create a new test event in the **Test** tab:
 
-![](/images/5-workshop/5.email/013-run-test-booking.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/013-run-test-booking.png?width=90pc)
 
 **Test event action:**
 - Select **Create new event**
@@ -69,7 +69,7 @@ Create a new test event in the **Test** tab:
 **Event name:**
 - Enter: `test-booking-confirmation`
 
-![](/images/5-workshop/5.email/014-run-test-booking.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/014-run-test-booking.png?width=90pc)
 
 **Event sharing settings:**
 - Select **Private**
@@ -100,6 +100,6 @@ Click **Save**
 
 Select the `test-booking-confirmation` test event and click **Test**:
 
-![](/images/5-workshop/5.email/012-run-test-booking.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/012-run-test-booking.png?width=90pc)
 
 You have completed testing the Lambda function! Next, proceed to [4.5.3 - Setup API Gateway](../4.5.3-setup-api-gateway).

@@ -23,7 +23,7 @@ In this section, we will configure Application Load Balancer to prepare for depl
 
 Access [EC2 Console](https://console.aws.amazon.com/ec2/) → **Security Groups** → **Create security group**:
 
-![](/images/5-workshop/6.deployment/057-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/057-alb.png?width=90pc)
 
 - **Security group name**: `carbuyer-alb-sg`
 - **Description**: `Security group for CarBuyer ALB`
@@ -35,25 +35,25 @@ Access [EC2 Console](https://console.aws.amazon.com/ec2/) → **Security Groups*
 
 **Outbound rules:** (default - All traffic)
 
-![](/images/5-workshop/6.deployment/058-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/058-alb.png?width=90pc)
 
 #### 2. Update Security Groups for EC2
 
 **Customer Service Security Group:**
 
-![](/images/5-workshop/6.deployment/059-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/059-alb.png?width=90pc)
 
 - Add rule: **Type**: Custom TCP, **Port**: 3000, **Source**: `carbuyer-alb-sg`
 
-![](/images/5-workshop/6.deployment/060-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/060-alb.png?width=90pc)
 
 **Admin Service Security Group:**
 
-![](/images/5-workshop/6.deployment/061-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/061-alb.png?width=90pc)
 
 - Add rule: **Type**: Custom TCP, **Port**: 3001, **Source**: `carbuyer-alb-sg`
 
-![](/images/5-workshop/6.deployment/062-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/062-alb.png?width=90pc)
 
 #### 3. Create Target Groups
 
@@ -61,22 +61,22 @@ Access [EC2 Console](https://console.aws.amazon.com/ec2/) → **Security Groups*
 
 Access **Target Groups** → **Create target group**:
 
-![](/images/5-workshop/6.deployment/063-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/063-alb.png?width=90pc)
 
 1. Create target group:
 - **Target type**: `Instances`
 - **Target group name**: `carbuyer-customer-tg`
 
-![](/images/5-workshop/6.deployment/064-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/064-alb.png?width=90pc)
 
 - **Protocol**: `HTTP`, **Port**: `3000`
 - **VPC**: Select VPC created
 
-![](/images/5-workshop/6.deployment/065-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/065-alb.png?width=90pc)
 
 - **Health check path**: `/`
 
-![](/images/5-workshop/6.deployment/066-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/066-alb.png?width=90pc)
 
 Click **Next**
 
@@ -84,15 +84,15 @@ Click **Next**
 - **Leave empty** - Don't select any instances
 - Click **Next**
 
-![](/images/5-workshop/6.deployment/067-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/067-alb.png?width=90pc)
 
 3. Review and create:
 - Verify configuration
 - Click **Create target group**
 
-![](/images/5-workshop/6.deployment/068-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/068-alb.png?width=90pc)
 
-![](/images/5-workshop/6.deployment/069-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/069-alb.png?width=90pc)
 
 **Target Group for Admin & Employee Service:**
 
@@ -101,20 +101,20 @@ Repeat the steps above with:
 - **Protocol**: `HTTP`, **Port**: `3001`
 - **Health check path**: `/admin/login` or `/employee/login`
 
-![](/images/5-workshop/6.deployment/070-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/070-alb.png?width=90pc)
 
 #### 4. Configure Stickiness for Admin & Employee Target Group
 
 In Target Group `carbuyer-admin-employee-tg`:
 - **Actions** → **Edit target group attributes**
 
-![](/images/5-workshop/6.deployment/071-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/071-alb.png?width=90pc)
 
 - **Stickiness**: `Enabled`
 - **Stickiness type**: `Load balancer generated cookie`
 - **Stickiness duration**: `1 days`
 
-![](/images/5-workshop/6.deployment/072-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/072-alb.png?width=90pc)
 
 - Select **save changes**
 
@@ -122,35 +122,35 @@ In Target Group `carbuyer-admin-employee-tg`:
 
 Access **Load Balancers** → **Create load balancer** 
 
-![](/images/5-workshop/6.deployment/073-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/073-alb.png?width=90pc)
 
 Select create **Application Load Balancer**:
 
-![](/images/5-workshop/6.deployment/074-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/074-alb.png?width=90pc)
 
 **Basic configuration:**
 - **Name**: `carbuyer-alb`
 - **Scheme**: `Internet-facing`
 - **IP address type**: `IPv4`
 
-![](/images/5-workshop/6.deployment/075-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/075-alb.png?width=90pc)
 
 **Network mapping:**
 - **VPC**: Select VPC created
 - **Mappings**: Select both public subnets
 
-![](/images/5-workshop/6.deployment/076-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/076-alb.png?width=90pc)
 
 - **Security groups**: Select `carbuyer-alb-sg`
 
 **Listeners and routing:**
 - **Protocol**: HTTP, **Port**: 80
 
-![](/images/5-workshop/6.deployment/077-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/077-alb.png?width=90pc)
 
 - **Default action**: Forward to `carbuyer-customer-tg`
 
-![](/images/5-workshop/6.deployment/078-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/078-alb.png?width=90pc)
 
 Click **Create load balancer**
 
@@ -162,7 +162,7 @@ After ALB is created, go to **Listeners** tab:
 - Click on listener **HTTP:80**
 - **Manage rules** → **Add rule**
 
-![](/images/5-workshop/6.deployment/079-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/079-alb.png?width=90pc)
 
 **Name and tags:**
 - **Name**: `admin-rule`
@@ -171,14 +171,14 @@ After ALB is created, go to **Listeners** tab:
 - **Add condition** → Select **Path**
 - **Path pattern**: `/admin/*`
 
-![](/images/5-workshop/6.deployment/080-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/080-alb.png?width=90pc)
 
 **Actions:**
 - **Routing action**: `Forward to target groups`
 - **Target group**: Select `carbuyer-admin-employee-tg`
 - **Weight**: `1`, **Percent**: `100%`
 
-![](/images/5-workshop/6.deployment/081-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/081-alb.png?width=90pc)
 
 Click **Next**
 
@@ -186,13 +186,13 @@ Click **Next**
 - **Priority**: `100` (or any number from 1-50,000)
 - Click **Next**
 
-![](/images/5-workshop/6.deployment/082-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/082-alb.png?width=90pc)
 
 3. Review and create:
 - Verify configuration
 - Click **Add rule**
 
-![](/images/5-workshop/6.deployment/083-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/083-alb.png?width=90pc)
 
 **Rule 2 - Employee paths:**
 - **Add rule** following similar steps:
@@ -201,21 +201,21 @@ Click **Next**
 - **Name**: `employee-rule`
 - **Condition**: Path = `/employee/*`
 
-![](/images/5-workshop/6.deployment/084-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/084-alb.png?width=90pc)
 
 - **Action**: Forward to `carbuyer-admin-employee-tg`
 
-![](/images/5-workshop/6.deployment/085-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/085-alb.png?width=90pc)
 
 2. Set rule priority:
 - **Priority**: `200` (different from admin rule)
 
-![](/images/5-workshop/6.deployment/086-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/086-alb.png?width=90pc)
 
 3. Review and create:
 - Click **Add rule**
 
-![](/images/5-workshop/6.deployment/087-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/087-alb.png?width=90pc)
 
 **Additional rules:**
 
@@ -231,17 +231,17 @@ Add the following rules using similar steps:
 | 500 | forgot-psw-rule | `/forgot*` | carbuyer-admin-employee-tg | Off |
 | 600 | reset-psw-rule | `/reset-password*` | carbuyer-admin-employee-tg | Off |
 
-![](/images/5-workshop/6.deployment/096-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/096-alb.png?width=90pc)
 
 #### 7. Get ALB DNS Name
 
 In **Load Balancers** → Select `carbuyer-alb`:
 
-![](/images/5-workshop/6.deployment/091-dns.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/091-dns.png?width=90pc)
 
 - Copy **DNS name**: `carbuyer-alb-xxxxxxxxx.ap-southeast-1.elb.amazonaws.com`
 
-![](/images/5-workshop/6.deployment/092-dns.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/092-dns.png?width=90pc)
 
 {{% notice info %}}
 **Save ALB DNS Name:**
@@ -264,6 +264,6 @@ After completion, you will have:
 - ✅ Security Groups updated
 - ✅ Listener rules for path-based routing
 
-![](/images/5-workshop/6.deployment/089-alb-2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/089-alb-2.png?width=90pc)
 
 Next proceed to [4.6.5 - Deploy Applications](../4.6.5-deploy-apps) to deploy applications and add instances to Target Groups.

@@ -14,7 +14,7 @@ Trong phần này, chúng ta sẽ tạo IAM Role và Lambda function để xử 
 
 Truy cập [IAM Console](https://console.aws.amazon.com/iam/) → **Roles** → **Create role**:
 
-![](/images/5-workshop/2.prerequisite/014-createrole.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/014-createrole.png?width=90pc)
 
 #### 2. Chọn trusted entity
 
@@ -22,13 +22,13 @@ Chọn:
 - **Trusted entity type**: `AWS service`
 - **Use case**: `Lambda`
 
-![](/images/5-workshop/5.email/007-trusted-entity.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/007-trusted-entity.png?width=90pc)
 
 #### 3. Gán permissions
 
 Tìm và chọn policy: `AWSLambdaBasicExecutionRole`
 
-![](/images/5-workshop/5.email/008-permissions.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/008-permissions.png?width=90pc)
 
 #### 4. Đặt tên role
 
@@ -37,13 +37,13 @@ Tìm và chọn policy: `AWSLambdaBasicExecutionRole`
 
 Click **Create role**
 
-![](/images/5-workshop/5.email/009-role-name.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/009-role-name.png?width=90pc)
 
 #### 5. Tạo Lambda function trên Console
 
 Truy cập [Lambda Console](https://console.aws.amazon.com/lambda/) → **Create a function**:
 
-![](/images/5-workshop/5.email/005-create-function.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/005-create-function.png?width=90pc)
 
 **Chọn tùy chọn tạo function:**
 - Chọn **Author from scratch**
@@ -53,7 +53,7 @@ Truy cập [Lambda Console](https://console.aws.amazon.com/lambda/) → **Create
 - **Runtime**: Node.js 22.x
 - **Architecture**: x86_64
 
-![](/images/5-workshop/5.email/006-create-function.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/006-create-function.png?width=90pc)
 
 **Permissions:**
 - Click **Change default execution role**
@@ -62,7 +62,7 @@ Truy cập [Lambda Console](https://console.aws.amazon.com/lambda/) → **Create
 
 Click **Create function**
 
-![](/images/5-workshop/5.email/007-create-function.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/007-create-function.png?width=90pc)
 
 #### 6. Tải và upload deployment package
 
@@ -73,13 +73,13 @@ Trong tab **Code** → **Upload from** → **.zip file**:
 - Chọn file `lambda-email-service.zip` vừa tải
 - Click **Save**
 
-![](/images/5-workshop/5.email/006-upload-code.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/006-upload-code.png?width=90pc)
 
 #### 7. Cấu hình Environment Variables
 
 Trong tab **Configuration** → **Environment variables** → **Edit**:
 
-![](/images/5-workshop/5.email/007-env-variables.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/007-env-variables.png?width=90pc)
 
 {{% notice info %}}
 Bạn có thể sử dụng Gmail SMTP hoặc Amazon SES. Trong workshop này sẽ sử dụng Gmail SMTP
@@ -92,19 +92,19 @@ Thêm các biến môi trường:
 
 Click **Save**
 
-![](/images/5-workshop/5.email/008-env-variables.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/008-env-variables.png?width=90pc)
 
 #### 8. Cấu hình General settings
 
 Trong tab **Configuration** → **General configuration** → **Edit**:
 
-![](/images/5-workshop/5.email/008-1-env-variables.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/008-1-env-variables.png?width=90pc)
 
 - **Timeout**: 30 seconds
 - **Memory**: 256 MB
 
 Click **Save**
 
-![](/images/5-workshop/5.email/008-general-config.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/008-general-config.png?width=90pc)
 
 Bạn đã hoàn thành việc setup IAM Role và Lambda function! Tiếp theo chuyển sang [4.5.2 - Test Lambda Function](../4.5.2-test-lambda).

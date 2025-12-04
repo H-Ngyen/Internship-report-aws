@@ -14,11 +14,11 @@ Trong phần này, chúng ta sẽ tạo REST API và deploy để có thể gọ
 
 Truy cập [API Gateway Console](https://console.aws.amazon.com/apigateway/) → **Create API**:
 
-![](/images/5-workshop/5.email/015-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/015-api-gateway-rest.png?width=90pc)
 
 - Chọn **REST API** → **Build**
 
-![](/images/5-workshop/5.email/016-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/016-api-gateway-rest.png?width=90pc)
 
 - **API name**: `carbuyer-email-api`
 - **Description**: `API for Lambda email service`
@@ -27,9 +27,9 @@ Truy cập [API Gateway Console](https://console.aws.amazon.com/apigateway/) →
 
 Click **Create API**
 
-![](/images/5-workshop/5.email/017-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/017-api-gateway-rest.png?width=90pc)
 
-![](/images/5-workshop/5.email/019-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/019-api-gateway-rest.png?width=90pc)
 
 #### 2. Tạo Method
 
@@ -39,14 +39,14 @@ Trong API vừa tạo:
 - Chọn resource `/`
 - Click **Create method**
 
-![](/images/5-workshop/5.email/026-create-method.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/026-create-method.png?width=90pc)
 
 **Method details:**
 - **Method type**: `POST`
 - **Integration type**: `Lambda function`
 - **Lambda proxy integration**: ✅
 
-![](/images/5-workshop/5.email/027-create-method.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/027-create-method.png?width=90pc)
 
 - **Lambda function**: `arn:aws:lambda:ap-southeast-1:442228338540:function:carbuyer-email-service`
 - **Integration timeout**: `29000`
@@ -56,30 +56,30 @@ Trong API vừa tạo:
 - **Request validator**: `None`
 - **API key required**: ✅
 
-![](/images/5-workshop/5.email/028-create-method.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/028-create-method.png?width=90pc)
 
 Click **Create method** và kiểm tra kết quả
 
-![](/images/5-workshop/5.email/029-create-method.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/029-create-method.png?width=90pc)
 
 #### 3. Deploy API
 
 Sau khi tạo method thành công, tìm nút **Deploy API** ở góc trên bên phải:
 
-![](/images/5-workshop/5.email/030-deploy-api.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/030-deploy-api.png?width=90pc)
 
 Click **Deploy API**:
 - **Deployment stage**: `*New stage*`
 - **Stage name**: `prod`
 - **Stage description**: `Production stage`
 
-![](/images/5-workshop/5.email/031-deploy-api.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/031-deploy-api.png?width=90pc)
 
 Click **Deploy**
 
 Lưu lại **Invoke URL** để sử dụng trong EC2
 
-![](/images/5-workshop/5.email/032-deploy-api.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/032-deploy-api.png?width=90pc)
 
 {{% notice warning %}}
 **Lưu lại Invoke URL:**

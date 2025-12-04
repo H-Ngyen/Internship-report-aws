@@ -82,7 +82,7 @@ The system is designed based on the **Multi-Tier Architecture** model with 3 ind
 - **AWS Lambda**: Serverless function for handling email sending (booking confirmation, password reset).
 - **Amazon API Gateway**: REST API endpoints with API Key authentication.
 
-![Architecture Overview](/images/arc-log.png)
+![Architecture Overview](/Internship-report-aws/images/arc-log.png)
 
 ---
 

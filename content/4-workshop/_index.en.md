@@ -14,7 +14,7 @@ Welcome to the workshop on Amazon EC2, DynamoDB, S3, CloudFront, and AWS Lambda!
 
 In this workshop, we will learn and deploy a Node.js application to AWS using a multi-tier architecture. We will explore how to set up VPC networking, deploy EC2 instances, configure DynamoDB database, and deploy serverless email service with Lambda. Afterward, we will apply the learned knowledge by deploying a real-world e-commerce application called CarBuyer on these services.
 
-![](/images/nodejs_x_aws.png)
+![](/Internship-report-aws/images/nodejs_x_aws.png)
 
 
 #### Duration

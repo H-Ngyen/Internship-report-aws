@@ -41,7 +41,7 @@ Amazon DynamoDB là dịch vụ cơ sở dữ liệu NoSQL được quản lý h
 | Slider | Ảnh slider trang chủ | id (String) |
 | DatLichKH | Lịch hẹn lái thử xe của khách hàng | id (String) |
 
-![DynamoDB Architecture](/images/arc-database.png)
+![DynamoDB Architecture](/Internship-report-aws/images/arc-database.png)
 
 #### Nội dung
 

@@ -41,7 +41,7 @@ The CarBuyer application uses 12 DynamoDB tables to store data:
 | Slider | Homepage slider images | id (String) |
 | DatLichKH | Customer test drive scheduling | id (String) |
 
-![DynamoDB Architecture](/images/arc-database.png)
+![DynamoDB Architecture](/Internship-report-aws/images/arc-database.png)
 
 #### Content
 

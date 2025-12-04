@@ -168,7 +168,7 @@ aws dynamodb put-item --table-name ThuongHieu --item '{"id":{"S":"TH176049208051
 
 3. Results:
 
-![Import Data](/images/5-workshop/3.dynamodb/005-dynamoDB.png?width=90pc)
+![Import Data](/Internship-report-aws/images/5-workshop/3.dynamodb/005-dynamoDB.png?width=90pc)
 
 #### Verify Data
 
@@ -214,6 +214,6 @@ Importing XeOto...
 Import completed!
 ```
 
-![Import Complex Data](/images/5-workshop/3.dynamodb/006-dynamoDB.png?width=90pc)
+![Import Complex Data](/Internship-report-aws/images/5-workshop/3.dynamodb/006-dynamoDB.png?width=90pc)
 
 Database is ready for the application!

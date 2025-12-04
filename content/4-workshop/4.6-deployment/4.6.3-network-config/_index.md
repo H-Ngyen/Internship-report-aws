@@ -17,7 +17,7 @@ Trong phần này, chúng ta sẽ kết nối và cấu hình môi trường cho
 1. Trong **VPC Console**, chọn **NAT Gateways**
 2. Chọn **Create NAT Gateway**
 
-![](/images/5-workshop/6.deployment/023-nat-gateway.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/023-nat-gateway.png?width=90pc)
 
 3. Cấu hình NAT Gateway:
    - **Name**: `carbuyer-nat-gateway`
@@ -27,39 +27,39 @@ Trong phần này, chúng ta sẽ kết nối và cấu hình môi trường cho
    
 4. Chọn **Create NAT Gateway**
 
-![](/images/5-workshop/6.deployment/026-nat-gateway.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/026-nat-gateway.png?width=90pc)
 
 5. Cập nhật Route Table cho Private Subnet AZ 1b:
    - Trong **VPC Console**, chọn **Route Tables**
    - Tìm route table của **Private Subnet AZ 1b** (carbuyer-fcj-rtb-private2-ap-southeast-1b)
    - Chọn route table → **Routes** tab → **Edit routes**
 
-![](/images/5-workshop/6.deployment/028-route-table.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/028-route-table.png?width=90pc)
 
    - **Add route**:
      - **Destination**: `0.0.0.0/0`
      - **Target**: NAT Gateway vừa tạo
    - **Save changes**
 
-![](/images/5-workshop/6.deployment/027-route-table.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/027-route-table.png?width=90pc)
 
 #### 2. Kết nối Customer Service Instance
 
 1. Trong **EC2 Console**, chọn **Instances**
 
-![](/images/5-workshop/6.deployment/035-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/035-connect.png?width=90pc)
 
 2. Chọn instance `carbuyer-customer-service`, chọn **Connect**
 
-![](/images/5-workshop/6.deployment/036-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/036-connect.png?width=90pc)
 
 3. Chọn tab **EC2 Instance Connect**
 
-![](/images/5-workshop/6.deployment/038-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/038-connect.png?width=90pc)
 
 4. Chọn **Connect** để mở terminal trong browser
 
-![](/images/5-workshop/6.deployment/037-connect.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/037-connect.png?width=90pc)
 
 #### 3. Cài đặt Node.js và PM2
 
@@ -78,7 +78,7 @@ sudo yum install -y nodejs
 sudo npm install -g pm2
 ```
 
-![](/images/5-workshop/6.deployment/039-node.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/039-node.png?width=90pc)
 
 2. Kiểm tra cài đặt:
 
@@ -88,7 +88,7 @@ npm --version
 pm2 --version
 ```
 
-![](/images/5-workshop/6.deployment/040-pm2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/040-pm2.png?width=90pc)
 
 #### 4. Kết nối Admin Service Instance (qua Bastion)
 
@@ -111,7 +111,7 @@ chmod 400 ~/.ssh/carbuyer-keypair.pem
 ssh -o StrictHostKeyChecking=accept-new -i ~/.ssh/carbuyer-keypair.pem ec2-user@ADMIN_PRIVATE_IP
 ```
 
-![](/images/5-workshop/6.deployment/042-bastion.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/042-bastion.png?width=90pc)
 
 3. Cài đặt Node.js và PM2 cho Admin Service:
 
@@ -136,6 +136,6 @@ npm --version
 pm2 --version
 ```
 
-![](/images/5-workshop/6.deployment/043-confirm-admin-pm2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/043-confirm-admin-pm2.png?width=90pc)
 
 Tiếp theo, chúng ta sẽ setup Application Load Balancer

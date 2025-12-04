@@ -21,4 +21,4 @@ Trong workshop này, chúng ta sẽ triển khai website thương mại điện 
 - **"Admin/Employee Service"** chạy trong private subnet để quản lý nội bộ. Service này chỉ có thể truy cập thông qua Application Load Balancer với path-based routing, xử lý các chức năng quản trị như quản lý sản phẩm, đơn hàng, người dùng và quản lý các mục nhỏ khác.
 - **"Lambda Email Service"** là serverless function xử lý việc gửi email thông báo cho khách hàng khi đặt lịch xem xe hoặc khi nhân viên cần đặt lại mật khẩu.
 
-![Architecture Overview](/images/arc-log.png)
+![Architecture Overview](/Internship-report-aws/images/arc-log.png)

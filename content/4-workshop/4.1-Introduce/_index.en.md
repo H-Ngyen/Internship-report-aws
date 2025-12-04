@@ -21,4 +21,4 @@ In this workshop, we will deploy a complete e-commerce website on AWS.
 - **"Admin/Employee Service"** runs in the private subnet for internal management. This service is accessible only through Application Load Balancer with path-based routing, handling administrative functions like product management, orders, users, and other items.
 - **"Lambda Email Service"** is a serverless function that handles sending notification emails to customers when booking test drives or when employees need password resets.
 
-![Architecture Overview](/images/arc-log.png)
+![Architecture Overview](/Internship-report-aws/images/arc-log.png)

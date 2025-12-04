@@ -23,7 +23,7 @@ Trong phần này, chúng ta sẽ cấu hình Application Load Balancer để ch
 
 Truy cập [EC2 Console](https://console.aws.amazon.com/ec2/) → **Security Groups** → **Create security group**:
 
-![](/images/5-workshop/6.deployment/057-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/057-alb.png?width=90pc)
 
 - **Security group name**: `carbuyer-alb-sg`
 - **Description**: `Security group for CarBuyer ALB`
@@ -35,25 +35,25 @@ Truy cập [EC2 Console](https://console.aws.amazon.com/ec2/) → **Security Gro
 
 **Outbound rules:** (mặc định - All traffic)
 
-![](/images/5-workshop/6.deployment/058-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/058-alb.png?width=90pc)
 
 #### 2. Cập nhật Security Groups cho EC2
 
 **Customer Service Security Group:**
 
-![](/images/5-workshop/6.deployment/059-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/059-alb.png?width=90pc)
 
 - Thêm rule: **Type**: Custom TCP, **Port**: 3000, **Source**: `carbuyer-alb-sg`
 
-![](/images/5-workshop/6.deployment/060-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/060-alb.png?width=90pc)
 
 **Admin Service Security Group:**
 
-![](/images/5-workshop/6.deployment/061-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/061-alb.png?width=90pc)
 
 - Thêm rule: **Type**: Custom TCP, **Port**: 3001, **Source**: `carbuyer-alb-sg`
 
-![](/images/5-workshop/6.deployment/062-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/062-alb.png?width=90pc)
 
 #### 3. Tạo Target Groups
 
@@ -61,22 +61,22 @@ Truy cập [EC2 Console](https://console.aws.amazon.com/ec2/) → **Security Gro
 
 Truy cập **Target Groups** → **Create target group**:
 
-![](/images/5-workshop/6.deployment/063-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/063-alb.png?width=90pc)
 
 1. Create target group:
 - **Target type**: `Instances`
 - **Target group name**: `carbuyer-customer-tg`
 
-![](/images/5-workshop/6.deployment/064-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/064-alb.png?width=90pc)
 
 - **Protocol**: `HTTP`, **Port**: `3000`
 - **VPC**: Chọn VPC đã tạo
 
-![](/images/5-workshop/6.deployment/065-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/065-alb.png?width=90pc)
 
 - **Health check path**: `/`
 
-![](/images/5-workshop/6.deployment/066-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/066-alb.png?width=90pc)
 
 Click **Next**
 
@@ -84,15 +84,15 @@ Click **Next**
 - **Để trống** - Không chọn instance nào
 - Click **Next**
 
-![](/images/5-workshop/6.deployment/067-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/067-alb.png?width=90pc)
 
 3. Review and create:
 - Kiểm tra cấu hình
 - Click **Create target group**
 
-![](/images/5-workshop/6.deployment/068-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/068-alb.png?width=90pc)
 
-![](/images/5-workshop/6.deployment/069-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/069-alb.png?width=90pc)
 
 **Target Group cho Admin & Employee Service:**
 
@@ -101,20 +101,20 @@ Lặp lại các bước trên với:
 - **Protocol**: `HTTP`, **Port**: `3001`
 - **Health check path**: `/admin/login` hoặc `/employee/login`
 
-![](/images/5-workshop/6.deployment/070-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/070-alb.png?width=90pc)
 
 #### 4. Cấu hình Stickiness cho Admin & Employee Target Group
 
 Trong Target Group `carbuyer-admin-employee-tg`:
 - **Actions** → **Edit target group attributes**
 
-![](/images/5-workshop/6.deployment/071-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/071-alb.png?width=90pc)
 
 - **Stickiness**: `Enabled`
 - **Stickiness type**: `Load balancer generated cookie`
 - **Stickiness duration**: `1 days`
 
-![](/images/5-workshop/6.deployment/072-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/072-alb.png?width=90pc)
 
 - Chọn **save changes**
 
@@ -122,34 +122,34 @@ Trong Target Group `carbuyer-admin-employee-tg`:
 
 Truy cập **Load Balancers** → **Create load balancer** 
 
-![](/images/5-workshop/6.deployment/073-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/073-alb.png?width=90pc)
 
 Chọn create **Application Load Balancer**:
 
-![](/images/5-workshop/6.deployment/074-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/074-alb.png?width=90pc)
 
 **Basic configuration:**
 - **Name**: `carbuyer-alb`
 - **Scheme**: `Internet-facing`
 - **IP address type**: `IPv4`
 
-![](/images/5-workshop/6.deployment/075-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/075-alb.png?width=90pc)
 
 **Network mapping:**
 - **VPC**: Chọn VPC đã tạo
 - **Mappings**: Chọn cả 2 public subnets
 
-![](/images/5-workshop/6.deployment/076-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/076-alb.png?width=90pc)
 
 - **Security groups**: Chọn `carbuyer-alb-sg`
 **Listeners and routing:**
 - **Protocol**: HTTP, **Port**: 80
 
-![](/images/5-workshop/6.deployment/077-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/077-alb.png?width=90pc)
 
 - **Default action**: Forward to `carbuyer-customer-tg`
 
-![](/images/5-workshop/6.deployment/078-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/078-alb.png?width=90pc)
 
 Click **Create load balancer**
 
@@ -161,7 +161,7 @@ Sau khi ALB được tạo, vào **Listeners** tab:
 - Click vào listener **HTTP:80**
 - **Manage rules** → **Add rule**
 
-![](/images/5-workshop/6.deployment/079-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/079-alb.png?width=90pc)
 
 **Name and tags:**
 - **Name**: `admin-rule`
@@ -170,14 +170,14 @@ Sau khi ALB được tạo, vào **Listeners** tab:
 - **Add condition** → Chọn **Path**
 - **Path pattern**: `/admin/*`
 
-![](/images/5-workshop/6.deployment/080-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/080-alb.png?width=90pc)
 
 **Actions:**
 - **Routing action**: `Forward to target groups`
 - **Target group**: Chọn `carbuyer-admin-employee-tg`
 - **Weight**: `1`, **Percent**: `100%`
 
-![](/images/5-workshop/6.deployment/081-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/081-alb.png?width=90pc)
 
 Click **Next**
 
@@ -185,13 +185,13 @@ Click **Next**
 - **Priority**: `100` (hoặc bất kỳ số từ 1-50,000)
 - Click **Next**
 
-![](/images/5-workshop/6.deployment/082-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/082-alb.png?width=90pc)
 
 3. Review and create:
 - Kiểm tra cấu hình
 - Click **Add rule**
 
-![](/images/5-workshop/6.deployment/083-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/083-alb.png?width=90pc)
 
 **Rule 2 - Employee paths:**
 - **Add rule** tiếp theo các bước tương tự:
@@ -200,21 +200,21 @@ Click **Next**
 - **Name**: `employee-rule`
 - **Condition**: Path = `/employee/*`
 
-![](/images/5-workshop/6.deployment/084-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/084-alb.png?width=90pc)
 
 - **Action**: Forward to `carbuyer-admin-employee-tg`
 
-![](/images/5-workshop/6.deployment/085-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/085-alb.png?width=90pc)
 
 2. Set rule priority:
 - **Priority**: `200` (khác với admin rule)
 
-![](/images/5-workshop/6.deployment/086-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/086-alb.png?width=90pc)
 
 3. Review and create:
 - Click **Add rule**
 
-![](/images/5-workshop/6.deployment/087-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/087-alb.png?width=90pc)
 
 **Các rules còn lại:**
 
@@ -230,17 +230,17 @@ Thêm các rules sau theo các bước tương tự:
 | 500 | forgot-psw-rule | `/forgot*` | carbuyer-admin-employee-tg | Off |
 | 600 | reset-psw-rule | `/reset-password*` | carbuyer-admin-employee-tg | Off |
 
-![](/images/5-workshop/6.deployment/096-alb.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/096-alb.png?width=90pc)
 
 #### 7. Lấy ALB DNS Name
 
 Trong **Load Balancers** → Chọn `carbuyer-alb`:
 
-![](/images/5-workshop/6.deployment/091-dns.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/091-dns.png?width=90pc)
 
 - Sao chép **DNS name**: `carbuyer-alb-xxxxxxxxx.ap-southeast-1.elb.amazonaws.com`
 
-![](/images/5-workshop/6.deployment/092-dns.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/092-dns.png?width=90pc)
 
 {{% notice info %}}
 **Lưu lại ALB DNS Name:**
@@ -263,7 +263,7 @@ Sau khi hoàn thành, bạn sẽ có:
 - ✅ Security Groups được cập nhật
 - ✅ Listener rules cho path-based routing
 
-![](/images/5-workshop/6.deployment/089-alb-2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/089-alb-2.png?width=90pc)
 
 
 Tiếp theo chuyển sang [4.6.5 - Deploy Applications](../4.6.5-deploy-apps) để deploy ứng dụng và add instances vào Target Groups.

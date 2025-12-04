@@ -82,7 +82,7 @@ Hệ thống được thiết kế theo mô hình **Multi-Tier Architecture** v�
 - **AWS Lambda**: Serverless function xử lý gửi email (xác nhận đặt lịch, reset mật khẩu)
 - **Amazon API Gateway**: REST API endpoints với API Key authentication
 
-![Architecture Overview](/images/arc-log.png)
+![Architecture Overview](/Internship-report-aws/images/arc-log.png)
 
 ---
 

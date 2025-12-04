@@ -14,7 +14,7 @@ Trong phần này, chúng ta sẽ tạo API Key và Usage Plan để bảo mật
 
 Trong API Gateway Console → **API Keys** → **Create API Key**:
 
-![](/images/5-workshop/5.email/018-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/018-api-gateway-rest.png?width=90pc)
 
 **API key details:**
 - **Name**: `carbuyer-email-api-key`
@@ -25,17 +25,17 @@ Trong API Gateway Console → **API Keys** → **Create API Key**:
 
 Click **Save**
 
-![](/images/5-workshop/5.email/020-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/020-api-gateway-rest.png?width=90pc)
 
 Lưu lại **API Key** để sử dụng sau này
 
-![](/images/5-workshop/5.email/021-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/021-api-gateway-rest.png?width=90pc)
 
 #### 2. Tạo Usage Plan
 
 Click **Usage Plans** → **Create**:
 
-![](/images/5-workshop/5.email/022-api-gateway-rest.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/022-api-gateway-rest.png?width=90pc)
 
 **Usage plan details:**
 - **Name**: `carbuyer-email-plan`
@@ -51,36 +51,36 @@ Click **Usage Plans** → **Create**:
 
 Click **Create usage plan**
 
-![](/images/5-workshop/5.email/023-usage-plan.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/023-usage-plan.png?width=90pc)
 
 #### 3. Thêm API Stage vào Usage Plan
 
 Quay lại **Usage Plans** → click vào `carbuyer-email-plan`:
 
-![](/images/5-workshop/5.email/024-usage-plan.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/024-usage-plan.png?width=90pc)
 
 **Trong tab Associated stages:**
 - Click **Add API Stage**
 
-![](/images/5-workshop/5.email/025-usage-plan.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/025-usage-plan.png?width=90pc)
 
 - **API**: Chọn `carbuyer-email-api`
 - **Stage**: Chọn `prod`
 - Click **Add to usage plan**
 
-![](/images/5-workshop/5.email/033-usage-plan.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/033-usage-plan.png?width=90pc)
 
 #### 4. Thêm API Key vào Usage Plan
 
 **Trong tab Associated API keys:**
 - Click **Add API Key**
 
-![](/images/5-workshop/5.email/034-api-key.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/034-api-key.png?width=90pc)
 
 - Chọn `carbuyer-email-api-key`
 - Click **Add API Key**
 
-![](/images/5-workshop/5.email/035-api-key.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/035-api-key.png?width=90pc)
 
 {{% notice warning %}}
 **Lưu lại API Key:**

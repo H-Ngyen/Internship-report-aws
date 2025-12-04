@@ -17,18 +17,18 @@ Trong phần này, chúng ta sẽ tạo 2 EC2 instances cho Customer Service và
 1. Truy cập **EC2 Console** tại [EC2 Dashboard](https://console.aws.amazon.com/ec2/)
 2. Chọn **Launch an instance**
 
-![](/images/5-workshop/6.deployment/002-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/002-ec2.png?width=90pc)
 
 #### Name and tags:
 - **Name**: `carbuyer-customer-service`
 
-![](/images/5-workshop/6.deployment/003-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/003-ec2.png?width=90pc)
 
 #### Application and OS Images (Amazon Machine Image):
 - Chọn **Amazon Linux 2023 AMI**
 - **Architecture**: Chọn 64-Bit (x86)
 
-![](/images/5-workshop/6.deployment/004-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/004-ec2.png?width=90pc)
 
 #### Instance type:
 - Chọn **t2.micro** (Free tier eligible)
@@ -39,7 +39,7 @@ Trong phần này, chúng ta sẽ tạo 2 EC2 instances cho Customer Service và
 - **Key pair type**: RSA
 - **Private key file format**: .pem
 
-![](/images/5-workshop/6.deployment/005-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/005-ec2.png?width=90pc)
 
 #### Network settings:
 Chọn **Edit** để cấu hình:
@@ -48,7 +48,7 @@ Chọn **Edit** để cấu hình:
 - **Auto-assign public IP**: Enable
 - **Firewall (security groups)**: Select existing security group → `carbuyer-customer-sg`
 
-![](/images/5-workshop/6.deployment/007-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/007-ec2.png?width=90pc)
 
 #### Configure storage:
 - Giữ mặc định: 8 GiB gp3 (Free tier eligible)
@@ -57,20 +57,20 @@ Chọn **Edit** để cấu hình:
 - **IAM instance profile**: `carbuyer-ec2-role`
 3. Chọn **Launch instance**
 
-![](/images/5-workshop/6.deployment/008-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/008-ec2.png?width=90pc)
 
 #### 2. Tạo EC2 Instance cho Admin/Employee Service
 
 1. Chọn **Launch an instance** một lần nữa
 
-![](/images/5-workshop/6.deployment/009-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/009-ec2.png?width=90pc)
 
 2. Sử dụng cùng cấu hình như Customer Service nhưng thay đổi:
 
 #### Name and tags:
 - **Name**: `carbuyer-admin-service`
 
-![](/images/5-workshop/6.deployment/010-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/010-ec2.png?width=90pc)
 
 #### Network settings (Edit):
 - **Network (VPC)**: `carbuyer-fcj-vpc`
@@ -78,19 +78,19 @@ Chọn **Edit** để cấu hình:
 - **Auto-assign public IP**: Disable
 - **Firewall (security groups)**: Select existing security group → `carbuyer-admin-sg`
 
-![](/images/5-workshop/6.deployment/012-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/012-ec2.png?width=90pc)
 
 3. Giữ nguyên các cấu hình khác (AMI, instance type, key pair, IAM role)
 
 4. Chọn **Launch instance**
 
-![](/images/5-workshop/6.deployment/013-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/013-ec2.png?width=90pc)
 
 #### 3. Kiểm tra instances
 
 1. Trong **EC2 Console**, chọn **Instances** từ menu bên trái
 
-![](/images/5-workshop/6.deployment/014-ec2.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/014-ec2.png?width=90pc)
 
 2. Xác nhận cả 2 instances đang ở trạng thái **Running**:
    - `carbuyer-customer-service` - Public subnet, có Public IP

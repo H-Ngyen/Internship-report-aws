@@ -13,7 +13,7 @@ Trong phần này, chúng ta sẽ test Lambda function với 2 loại email: Res
 #### 1. Tạo Test Event cho Reset Password
 
 Trong tab **Test**:
-![](/images/5-workshop/5.email/009-test.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/009-test.png?width=90pc)
 
 **Test event action:**
 - Chọn **Create new event**
@@ -21,7 +21,7 @@ Trong tab **Test**:
 **Invocation type:**
 - Chọn **Synchronous**
 
-![](/images/5-workshop/5.email/010-test.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/010-test.png?width=90pc)
 
 **Event name:**
 - Nhập: `test-reset-password`
@@ -51,17 +51,17 @@ Click **Save**
 
 Click **Test** để chạy test event. Kiểm tra kết quả trong **Execution results**:
 
-![](/images/5-workshop/5.email/010-run-test-reset.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/010-run-test-reset.png?width=90pc)
 
-![](/images/5-workshop/5.email/011-run-test-reset.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/011-run-test-reset.png?width=90pc)
 
-![](/images/5-workshop/5.email/012-run-test-reset.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/012-run-test-reset.png?width=90pc)
 
 #### 3. Tạo Test Event cho Booking Confirmation
 
 Tạo test event mới trong tab **Test**:
 
-![](/images/5-workshop/5.email/013-run-test-booking.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/013-run-test-booking.png?width=90pc)
 
 **Test event action:**
 - Chọn **Create new event**
@@ -69,7 +69,7 @@ Tạo test event mới trong tab **Test**:
 **Event name:**
 - Nhập: `test-booking-confirmation`
 
-![](/images/5-workshop/5.email/014-run-test-booking.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/014-run-test-booking.png?width=90pc)
 
 **Event sharing settings:**
 - Chọn **Private**
@@ -100,6 +100,6 @@ Click **Save**
 
 Chọn test event `test-booking-confirmation` và click **Test**:
 
-![](/images/5-workshop/5.email/012-run-test-booking.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/5.email/012-run-test-booking.png?width=90pc)
 
 Bạn đã hoàn thành việc test Lambda function! Tiếp theo chuyển sang [4.5.3 - Setup API Gateway](../4.5.3-setup-api-gateway).

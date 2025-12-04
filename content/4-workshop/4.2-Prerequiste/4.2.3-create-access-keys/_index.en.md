@@ -14,48 +14,48 @@ We need to create an IAM User with Access Keys so both Node.js applications (Cus
 
 1. In IAM Console, select **Users** → **Create user**
 
-![](/images/5-workshop/2.prerequisite/020-createuser.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/020-createuser.png?width=90pc)
 
 2. Configure user:
    - **User name**: `carbuyer-app-user`
    - **Provide user access to the AWS Management Console**: **DO NOT select** (this user is only for the application)
 
-![](/images/5-workshop/2.prerequisite/021-createuser.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/021-createuser.png?width=90pc)
 
 3. Attach permissions policies:
    - `AmazonDynamoDBFullAccess`
    - `AmazonS3FullAccess`
    - `CloudFrontFullAccess`
 
-![](/images/5-workshop/2.prerequisite/022-createuser.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/022-createuser.png?width=90pc)
 
 4. Confirm information and select **Create user**
 
-![](/images/5-workshop/2.prerequisite/023-createuser.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/023-createuser.png?width=90pc)
 
-![](/images/5-workshop/2.prerequisite/024-createuser.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/024-createuser.png?width=90pc)
 
 #### Create Access Keys
 
 1. Click on the `carbuyer-app-user` user just created
 
-![](/images/5-workshop/2.prerequisite/025-accesskeys.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/025-accesskeys.png?width=90pc)
 
 2. Select **Security credentials** tab
 
-![](/images/5-workshop/2.prerequisite/026-accesskeys.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/026-accesskeys.png?width=90pc)
 
 3. Scroll down to **Access keys** section, click **Create access key**
 
-![](/images/5-workshop/2.prerequisite/027-accesskeys.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/027-accesskeys.png?width=90pc)
 
 4. Select use case: **Command Line Interface (CLI)**
 
-![](/images/5-workshop/2.prerequisite/028-accesskeys.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/028-accesskeys.png?width=90pc)
 
 5. (**Optional**) Add description tag: `carbuyer-app-keys`
 
-![](/images/5-workshop/2.prerequisite/029-accesskeys.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/2.prerequisite/029-accesskeys.png?width=90pc)
 
 6. Click **Create access key**
 
@@ -63,7 +63,7 @@ We need to create an IAM User with Access Keys so both Node.js applications (Cus
    - **Access key ID**
    - **Secret access key**:
 
-![30](/images/5-workshop/2.prerequisite/030-collectkey.png?width=90pc)
+![30](/Internship-report-aws/images/5-workshop/2.prerequisite/030-collectkey.png?width=90pc)
 
 8. Click **Download .csv file** to save credentials
 

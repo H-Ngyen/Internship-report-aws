@@ -15,28 +15,28 @@ Trong bước này, chúng ta sẽ tạo các Security Groups để kiểm soát
 1. Truy cập **EC2 Console** → **Security Groups**
 2. Chọn **Create security group**
 
-![](/images/5-workshop/6.deployment/001-securitygroups.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/001-securitygroups.png?width=90pc)
 
 #### Cấu hình cơ bản:
 - **Name**: `carbuyer-customer-sg`
 - **Description**: `Security group for customer service EC2`
 - **VPC**: `carbuyer-fcj-vpc`
 
-![](/images/5-workshop/6.deployment/002-customersecuritygroup.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/002-customersecuritygroup.png?width=90pc)
 
 #### Inbound Rules:
 | Type | Protocol | Port | Source | Description |
 |------|----------|------|--------|-------------|
 | SSH | TCP | 22 | 0.0.0.0/0 | SSH access |
 
-![](/images/5-workshop/6.deployment/004-customerinboundrules.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/004-customerinboundrules.png?width=90pc)
 
 #### Outbound Rules:
 - **All traffic** (0.0.0.0/0) - Mặc định
 
 3. Chọn **Create security group**
 
-![](/images/5-workshop/6.deployment/005-createcustomersg.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/005-createcustomersg.png?width=90pc)
 
 #### 2. Tạo Security Group cho Admin Service
 
@@ -46,7 +46,7 @@ Trong bước này, chúng ta sẽ tạo các Security Groups để kiểm soát
 
 1. Chọn **Create security group**
 
-![](/images/5-workshop/6.deployment/001-securitygroups.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/001-securitygroups.png?width=90pc)
 
 #### Cấu hình cơ bản:
 - **Name**: `carbuyer-admin-sg`
@@ -58,14 +58,14 @@ Trong bước này, chúng ta sẽ tạo các Security Groups để kiểm soát
 |------|----------|------|--------|-------------|
 | SSH | TCP | 22 | 10.0.1.0/24 | SSH access from Customer EC2 |
 
-![](/images/5-workshop/6.deployment/007-adminsecuritygroup.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/007-adminsecuritygroup.png?width=90pc)
 
 #### Outbound Rules:
 - **All traffic** (0.0.0.0/0) - Cho phép internet access qua NAT Gateway
 
 2. Chọn **Create security group**
 
-![](/images/5-workshop/6.deployment/008-createadminsg.png?width=90pc)
+![](/Internship-report-aws/images/5-workshop/6.deployment/008-createadminsg.png?width=90pc)
 
 #### Kiểm tra kết quả
 
